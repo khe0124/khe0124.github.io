@@ -1,7 +1,7 @@
 # Site settings
 title:          seaweed island
 description:    "Front-end Developer"
-baseurl:        "/"
+baseurl:        ""
 url:            "https://khe0124.github.io"
 
 # Google Analytics
