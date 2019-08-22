@@ -10,11 +10,12 @@ permalink: /resume/
 <hr>
 
 # Toy Project
+작업했던 프로젝트들입니다.
 ### Project name 01
 Project description
-### Project name 02<br>
+### Project name 02
 Project description
-### Project name 03<br>
+### Project name 03
 Project description
 
 <br>
