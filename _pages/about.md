@@ -12,3 +12,4 @@ permalink: /about/
 ## CONTACT
 - E-MAIL: khe0124@gmail.com
 - MOBILE: +82 10 5211 8536
+- DEV BLOG: https://seaweedisland.tistory.com/
