@@ -10,5 +10,5 @@ permalink: /about/
 
 
 ## CONTACT
-<code>E-MAIL</code> khe0124@gmail.com
-<code>MOBILE</code> +82 10 5211 8536
+- <code>E-MAIL</code> khe0124@gmail.com
+- <code>MOBILE</code> +82 10 5211 8536
