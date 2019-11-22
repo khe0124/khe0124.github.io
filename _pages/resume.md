@@ -4,40 +4,30 @@ title: "Resume"
 permalink: /resume/
 ---
 
-# 프론트엔드 개발자
-안녕하세요? 새로운 기술, 디자인 트렌드에 관심이 많은 프론트엔드 개발자 강하은입니다.
+# 웹 개발자
+안녕하세요? 새로운 기술, 디자인 트렌드에 관심이 많은 웹 개발자 강하은입니다.
 
 <hr>
 
-# Toy Project
+# Projects
 작업했던 프로젝트들입니다.
-### Project name 01
-Project description
-### Project name 02
-Project description
-### Project name 03
-Project description
 
-<br>
+### PineTree_Hotel
+호텔예약 웹사이트 
+[Github link](https://github.com/khe0124/PineTree_Hotel)
+
+### Mypage(MVC1)
+MVC1 패턴으로 제작한 CRUD 웹사이트
+[Github link](https://github.com/khe0124/JSP_Template)
+
 
 # Skills 
+* Java
+* JSP / Servlet
+* Spring Framework
 * HTML/CSS
 * Javascript
 * React / Redux
-* JSP
-* blahblah
-
-<br>
-
-# Work Experience
-### Project name 01<br>
-Project description
-### Project name 02<br>
-Project description
-### Project name 03<br>
-Project description
-
-<br>
 
 # Education
 ### Kookmin University<br>
