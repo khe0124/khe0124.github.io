@@ -22,12 +22,12 @@ MVC1 패턴으로 제작한 CRUD 웹사이트
 
 
 # Skills 
+* HTML/CSS,SCSS
+* Javascript / ES6
+* React / Redux
 * Java
 * JSP / Servlet
 * Spring Framework
-* HTML/CSS
-* Javascript
-* React / Redux
 
 # Education
 ### Kookmin University<br>
