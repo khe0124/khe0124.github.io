@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Frontend Developer_`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `0124`,
+      summary: `프론트엔드 개발자 강하은입니다.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
@@ -19,6 +19,9 @@ module.exports = {
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
     },
     {
       resolve: `gatsby-source-filesystem`,
