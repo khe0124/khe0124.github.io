@@ -5,29 +5,37 @@ import Nav from "../components/Nav"
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
+
+  console.log("LOCATION ===>", location)
   let header
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
-        <Link to="/">twenty-four seven</Link>
-      </h1>
+      <>
+        {/* <h1 className="main-heading">
+          <Link to="/">{`Frontend\nDeveloper`}</Link>
+        </h1>
+        <p>프론트엔드 개발자</p> */}
+      </>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <>
+        <h2>
+          <Link className="header-link-home" to="/">
+            {title}
+          </Link>
+        </h2>
+      </>
     )
   }
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
-      <Nav />
+      {!isRootPath && <Nav />}
       <main>{children}</main>
-      <footer>
-      </footer>
+      <footer></footer>
     </div>
   )
 }

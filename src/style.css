@@ -1,4 +1,12 @@
 /* CSS Custom Properties Definitions */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --maxWidth-none: "none";
@@ -27,13 +35,13 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  --fontFamily-sans: "Noto Sans KR", "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
     Times, serif;
-  --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
+  --fontFamily-title: "GangwonEduPowerExtraBoldA";
+  --font-body: var(--fontFamily-sans);
+  --font-heading: var(--fontFamily-title);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -54,12 +62,23 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-primary: #718ffc;
+  --color-yellowgreen: #36f83f;
+  --color-primary-pale: #e3e9fe;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-grey-1: #111;
+  --color-grey-2: #222;
+  --color-grey-3: #333;
+  --color-grey-4: #444;
+  --color-grey-5: #555;
+  --color-grey-6: #666;
+  --color-grey-7: #777;
+  --color-grey-8: #888;
+  --color-grey-9: #999;
 }
 
 /* HTML elements */
@@ -120,7 +139,7 @@ h6 {
 h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
+  color: var(--color-primary);
 }
 
 h2 {
@@ -146,6 +165,7 @@ h6 {
 h1 > a {
   color: inherit;
   text-decoration: none;
+  white-space: pre-wrap;
 }
 
 h2 > a,
@@ -165,6 +185,7 @@ p {
   --x-height-multiplier: 0.35;
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
   padding: var(--spacing-0);
+  letter-spacing: -0.02rem;
 }
 
 ul,
@@ -254,9 +275,95 @@ a:focus {
   margin-bottom: var(--spacing-12);
 }
 
-.main-heading {
+.main-heading-item {
+  display: flex;
+  align-items: baseline;
+}
+
+@keyframes fish {
+  0% {
+    transform: rotate(45deg);
+  }
+  95% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.fish-icon {
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 47, 134, 0.2);
+  border-radius: 50%;
+  animation: fish 0.5s ease-in;
+}
+
+.fish-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+h1.main-heading {
   font-size: var(--fontSize-7);
   margin: 0;
+  padding-right: 1rem;
+}
+h1.main-heading a {
+  display: inline-block;
+}
+h1.main-heading a span {
+  background: linear-gradient(
+    45deg,
+    rgba(113, 143, 252, 1) 0%,
+    rgba(96, 173, 255, 1) 35%,
+    rgba(54, 248, 63, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-description {
+  padding: 24px 0;
+}
+
+.main-description p {
+  margin: 0;
+}
+
+.main-item {
+  padding: 0 8px 24px;
+}
+
+.main-item p {
+  margin: 0;
+}
+
+.main-links {
+  display: block;
+  padding: 24px 0;
+}
+@media screen and (min-width: 767px) {
+  .main-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 6px;
+  }
+}
+
+.main-item h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-4);
+  font-size: var(--fontSize-3);
+  font-family: var(--fontFamily-title);
+}
+
+.main-item p {
+  font-size: var(--fontSize-1);
+  color: var(--color-grey-6);
+  word-break: keep-all;
 }
 
 .post-list-item {
@@ -317,6 +424,46 @@ a:focus {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  display: block;
+  color: var(--color-heading);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.3s;
+  background-size: 0% 100%;
+  background-image: linear-gradient(
+    180deg,
+    transparent 100%,
+    var(--color-primary) 0
+  );
+}
+
+.nav a:hover {
+  color: #1a202c;
+  background-size: 100% 100%;
+  background-image: linear-gradient(
+    180deg,
+    transparent 75%,
+    var(--color-primary) 0
+  );
+}
+
+.resume-item h2 {
+  font-size: var(--fontSize-4);
+}
+
+.resume-item p {
+  font-size: var(--fontSize-1);
+}
+
+.resume-item h3 {
+  font-size: var(--fontSize-2);
 }
 
 /* Media queries */

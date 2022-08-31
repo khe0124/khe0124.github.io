@@ -1,88 +1,93 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import SquareButton from "../components/SquareButton"
+import SkillBox from "../components/SkillBox"
 import Seo from "../components/seo"
+import route from "../components/route.constant"
+import FishIcon from "../images/fish_filled.svg"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
-const BlogIndex = ({ data, location }) => {
+const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  console.log("====> node", data);
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          아직 포스트가 없어요 :(
-        </p>
-      </Layout>
-    )
-  }
-
+  const navList = route || []
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    })
+  })
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+      <section>
+        <section className="main-item">
+          <div className="main-heading-item">
+            <h1
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+              className="main-heading"
+            >
+              <Link to="/">
+                <span>{`Frontend\nDeveloper`}</span>
+              </Link>
+            </h1>
+            <div className="fish-icon">
+              <img src={FishIcon} alt="" />
+            </div>
+          </div>
+          <div className="main-description">
+            <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+              UI디자인과 자바스크립트를 좋아하는
+            </p>
+            <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+              <Link to="/resume">개발자 강하은</Link>입니다.
+            </p>
+          </div>
+        </section>
+        <section className="main-item ">
+          <h2>Introduce.</h2>
+          <p>
+            저는 다양한 형태의 UI에 대한 이해도가 높아, 디자인을 정확하게
+            화면으로 구현합니다. 능동적인 업무 자세로 기획자, 디자이너 등 유관
+            부서와 협업에도 적극적이고 유연한 소통 가능하며, 끊임없는 공부와
+            성장을 즐기고 있습니다.
+          </p>
+        </section>
+        <section className="main-item">
+          <h2>Skills.</h2>
+          <SkillBox></SkillBox>
+        </section>
+        <section className="main-item">
+          <div className="main-links">
+            {navList &&
+              navList.map(n => {
+                return (
+                  <>
+                    <SquareButton
+                      emoji={n.emoji}
+                      link={n.link}
+                      label={n.label.toUpperCase()}
+                    ></SquareButton>
+                  </>
+                )
+              })}
+          </div>
+        </section>
+      </section>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
       }
     }
   }
