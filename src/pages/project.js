@@ -40,10 +40,10 @@ const Project = ({ data, location }) => {
   const sideList = side
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
+      <Seo title="Project" />
       <section className="resume">
         <ResumeItem className="resume-item">
-          <h2>Side Projects</h2>
+          <h2>Side Project</h2>
           {sideList &&
             sideList.map(obj => (
               <ExpItem

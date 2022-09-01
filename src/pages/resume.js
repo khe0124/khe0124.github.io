@@ -17,7 +17,7 @@ const Resume = ({ data, location }) => {
   const expList = experience
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
+      <Seo title="Resume" />
       <section className="resume">
         <ResumeItem className="resume-item">
           <h2>Experience</h2>

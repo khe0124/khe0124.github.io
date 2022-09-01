@@ -15,7 +15,13 @@ const ProfilePic = styled.div`
   justify-content: center;
   flex-direction: column;
   div {
-    padding: 36px;
+    padding: 36px 0 16px;
+    p.color-primary {
+      color: var(--color-primary);
+      font-size: 14px;
+      padding-top: 16px;
+      margin: 0;
+    }
   }
   a {
     margin: auto;
@@ -31,12 +37,12 @@ const Contact = ({ data, location }) => {
   const btnList = extlink || []
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="contact" />
+      <Seo title="Contact" />
       <ProfilePic>
         <div>
           <FishIcon isContact={true} />
+          <p className="color-primary">열대섬 해초속의 작은 개발자</p>
         </div>
-        <p>열대섬 해초속의 작은 개발자</p>
         <p>{`편하신 수단을 통해서\n연락주시기 바랍니다. 감사합니다.`}</p>
       </ProfilePic>
       <div className="contact-links">

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Frontend Developer_`,
+    title: `프론트엔드 개발자 강하은 | 열대섬 해초 속 개발자`,
     author: {
       name: `0124`,
       summary: `프론트엔드 개발자 강하은입니다.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `프론트엔드 개발자 강하은입니다. UI디자인과 자바스크립트를 좋아합니다.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `kylemathews`,
