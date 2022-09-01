@@ -45,6 +45,7 @@ const Contact = ({ data, location }) => {
             return (
               <SquareButton
                 external={true}
+                icon={n.icon}
                 emoji={n.emoji}
                 link={n.link}
                 key={n.label}

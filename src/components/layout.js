@@ -5,7 +5,7 @@ import Nav from "../components/Nav"
 import FishIcon from "../components/FishIcon"
 const PageTitle = styled.div`
   display: flex;
-  align-items: middle;
+  align-items: center;
   h2 {
     margin: 0;
     padding-left: 1rem;

@@ -28,7 +28,7 @@ const SquareButtonWrapper = styled(Link)`
   .flex-center {
     display: flex;
     justify-content: center;
-    align-items: middle;
+    align-items: center;
   }
   img {
     opacity: 0.5;
@@ -83,9 +83,17 @@ const SquareButtonWrapperOuterLink = styled.a`
   .flex-center {
     display: flex;
     justify-content: center;
-    align-items: middle;
+    align-items: center;
+    .image-wrap {
+      width: 18px;
+      height: 18px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
-  img {
+  .arrow-box img {
     opacity: 0.5;
   }
   span {
@@ -122,7 +130,14 @@ const SquareButton = ({ emoji, icon, external, link, isOut, label }) => {
   if (external) {
     return (
       <SquareButtonWrapperOuterLink href={link}>
-        <div className="flex-center">{emoji}</div>
+        {emoji && <div className="flex-center">{emoji}</div>}
+        {icon && (
+          <div className="flex-center">
+            <div className="image-wrap">
+              <img src={icon} alt="" />
+            </div>
+          </div>
+        )}
         <div>
           <span>{label}</span>
         </div>

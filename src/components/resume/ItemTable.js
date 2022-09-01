@@ -8,7 +8,7 @@ const ItemTableWrapper = styled.div`
 
 const ItemRow = styled.div`
   display: grid;
-  grid-template-columns: 15% 1fr;
+  grid-template-columns: 80px 1fr;
   border-bottom: 1px dotted var(--color-grey-d);
   padding: 16px 0;
 `
