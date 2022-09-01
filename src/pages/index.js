@@ -1,12 +1,11 @@
 import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SquareButton from "../components/SquareButton"
 import SkillBox from "../components/SkillBox"
 import Seo from "../components/seo"
-import route from "../components/route.constant"
+import route from "../contents/route.constant"
 import FishIcon from "../images/fish_filled.svg"
 import AOS from "aos"
 import "aos/dist/aos.css"
@@ -58,20 +57,20 @@ const Index = ({ data, location }) => {
         </section>
         <section className="main-item">
           <h2>Skills.</h2>
-          <SkillBox></SkillBox>
+          <SkillBox />
         </section>
         <section className="main-item">
           <div className="main-links">
             {navList &&
               navList.map(n => {
                 return (
-                  <>
-                    <SquareButton
-                      emoji={n.emoji}
-                      link={n.link}
-                      label={n.label.toUpperCase()}
-                    ></SquareButton>
-                  </>
+                  <SquareButton
+                    emoji={n.emoji}
+                    link={n.link}
+                    key={n.label}
+                    external={n.external}
+                    label={n.label.toUpperCase()}
+                  ></SquareButton>
                 )
               })}
           </div>

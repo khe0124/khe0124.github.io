@@ -79,6 +79,11 @@
   --color-grey-7: #777;
   --color-grey-8: #888;
   --color-grey-9: #999;
+  --color-grey-a: #aaa;
+  --color-grey-b: #bbb;
+  --color-grey-c: #ccc;
+  --color-grey-d: #ddd;
+  --color-grey-e: #eee;
 }
 
 /* HTML elements */
@@ -284,6 +289,9 @@ a:focus {
   0% {
     transform: rotate(45deg);
   }
+  50% {
+    transform: rotate(-15deg);
+  }
   95% {
     transform: rotate(0deg);
   }
@@ -351,6 +359,16 @@ h1.main-heading a span {
     grid-template-rows: 1fr 1fr;
     gap: 6px;
   }
+}
+
+.contact-links {
+  display: block;
+  padding: 24px 0;
+  margin: auto;
+}
+
+.contact-links a {
+  margin: 8px auto;
 }
 
 .main-item h2 {
@@ -444,26 +462,9 @@ h1.main-heading a span {
   );
 }
 
-.nav a:hover {
-  color: #1a202c;
-  background-size: 100% 100%;
-  background-image: linear-gradient(
-    180deg,
-    transparent 75%,
-    var(--color-primary) 0
-  );
-}
-
 .resume-item h2 {
   font-size: var(--fontSize-4);
-}
-
-.resume-item p {
-  font-size: var(--fontSize-1);
-}
-
-.resume-item h3 {
-  font-size: var(--fontSize-2);
+  margin: 0;
 }
 
 /* Media queries */

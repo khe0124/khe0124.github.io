@@ -36,7 +36,7 @@ const SkillBox = () => {
     <SkillBoxWrapper>
       {imageList &&
         imageList.map(e => (
-          <div>
+          <div key={e}>
             <img src={e} alt="" />
           </div>
         ))}
