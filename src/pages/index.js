@@ -23,12 +23,12 @@ const Index = ({ data, location }) => {
       <Seo title="All posts" />
       <section>
         <section className="main-item">
-          <div className="main-heading-item">
-            <h1
-              data-aos="fade-up"
-              data-aos-anchor-placement="bottom-bottom"
-              className="main-heading"
-            >
+          <div
+            className="main-heading-item"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+          >
+            <h1 className="main-heading">
               <Link to="/">
                 <span>{`Frontend\nDeveloper`}</span>
               </Link>
@@ -46,7 +46,7 @@ const Index = ({ data, location }) => {
             </p>
           </div>
         </section>
-        <section className="main-item ">
+        <section className="main-item" data-aos="fade-up">
           <h2>Introduce.</h2>
           <p>
             저는 다양한 형태의 UI에 대한 이해도가 높아, 디자인을 정확하게
@@ -55,11 +55,11 @@ const Index = ({ data, location }) => {
             성장을 즐기고 있습니다.
           </p>
         </section>
-        <section className="main-item">
+        <section className="main-item" data-aos="fade-up">
           <h2>Skills.</h2>
           <SkillBox />
         </section>
-        <section className="main-item">
+        <section className="main-item" data-aos="fade-up">
           <div className="main-links">
             {navList &&
               navList.map(n => {

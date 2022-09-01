@@ -26,6 +26,7 @@ const ItemContent = styled.div`
   }
   p {
     margin: 0;
+    font-size: 14px;
     &.period {
       color: var(--color-grey-9);
       font-weight: var(--fontWeight-light);
@@ -33,6 +34,7 @@ const ItemContent = styled.div`
     }
     &.bold {
       color: var(--color-grey-3);
+      font-size: 16px;
       font-weight: var(--fontWeight-bold);
     }
   }
