@@ -16,7 +16,7 @@ const Index = ({ data, location }) => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      offset: 120, // offset (in px) from the original trigger point
+      offset: 200, // offset (in px) from the original trigger point
       delay: 0, // values from 0 to 3000, with step 50ms
       easing: "ease", // default easing for AOS animations
       once: true,
@@ -24,7 +24,7 @@ const Index = ({ data, location }) => {
   })
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="🐠" />
+      <Seo title="🐠 프론트엔드 개발자 강하은" />
       <section>
         <section className="main-item">
           <div

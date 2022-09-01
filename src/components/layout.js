@@ -16,13 +16,14 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   const curPath = location.pathname
+  const curPathHeader = curPath.substr(1).toUpperCase()
 
   let header
   if (!isRootPath) {
     header = (
       <PageTitle>
         <FishIcon />
-        <h2>{curPath.substr(1)}</h2>
+        <h2>{curPathHeader}</h2>
       </PageTitle>
     )
   }

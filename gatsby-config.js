@@ -5,10 +5,11 @@ module.exports = {
       name: `0124`,
       summary: `프론트엔드 개발자 강하은입니다.`,
     },
-    description: `프론트엔드 개발자 강하은입니다. UI디자인과 자바스크립트를 좋아합니다.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `UI디자인과 자바스크립트를 좋아하는 프론트엔드 개발자 강하은입니다.`,
+    image: ``,
+    siteUrl: `https://khe0124.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
   },
   plugins: [
@@ -23,6 +24,14 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-web-font-loader",
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://khe0124.github.io/",
+        sitemap: "https://khe0124.github.io/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -50,6 +59,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-sitemap`,
         ],
       },
     },
