@@ -40,7 +40,11 @@ const Project = ({ data, location }) => {
   const sideList = side
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Project" />
+      <Seo
+        title="프로젝트"
+        description="프론트엔드 개발자 강하은이 진행한 사이드 프로젝트와 작업물 모음입니다."
+        pathname={location.pathname}
+      />
       <section className="resume">
         <ResumeItem className="resume-item">
           <h2>Side Project</h2>

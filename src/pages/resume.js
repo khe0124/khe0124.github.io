@@ -17,7 +17,11 @@ const Resume = ({ data, location }) => {
   const expList = experience
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Resume" />
+      <Seo
+        title="이력서"
+        description="프론트엔드 개발자 강하은의 경력, 기술 스택, 학력 및 자격증 소개입니다."
+        pathname={location.pathname}
+      />
       <section className="resume">
         <ResumeItem className="resume-item">
           <h2>Experience</h2>
@@ -30,6 +34,7 @@ const Resume = ({ data, location }) => {
                 role={exp.role}
                 stacks={exp.stacks}
                 tasks={exp.tasks}
+                projects={exp.projects}
                 key={exp.company}
               />
             ))}

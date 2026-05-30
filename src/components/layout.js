@@ -6,9 +6,10 @@ import FishIcon from "../components/FishIcon"
 const PageTitle = styled.div`
   display: flex;
   align-items: center;
-  h2 {
+  h1 {
     margin: 0;
     padding-left: 1rem;
+    font-size: var(--fontSize-5);
   }
 `
 
@@ -16,14 +17,14 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   const curPath = location.pathname
-  const curPathHeader = curPath.substr(1).toUpperCase()
+  const curPathHeader = curPath.replace(/^\/|\/$/g, "").toUpperCase()
 
   let header
   if (!isRootPath) {
     header = (
       <PageTitle>
         <FishIcon />
-        <h2>{curPathHeader}</h2>
+        <h1>{curPathHeader}</h1>
       </PageTitle>
     )
   }

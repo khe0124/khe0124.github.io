@@ -24,7 +24,7 @@ const Index = ({ data, location }) => {
   })
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="🐠 프론트엔드 개발자 강하은" />
+      <Seo title="프론트엔드 개발자" pathname={location.pathname} />
       <section>
         <section className="main-item">
           <div
@@ -43,7 +43,7 @@ const Index = ({ data, location }) => {
           </div>
           <div className="main-description">
             <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-              UI디자인과 자바스크립트를 좋아하는
+              복잡한 산업 도메인을 제품 UI로 만드는
             </p>
             <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
               <Link to="/resume">개발자 강하은</Link>입니다.
@@ -53,10 +53,12 @@ const Index = ({ data, location }) => {
         <section className="main-item" data-aos="fade-up">
           <h2>Introduce.</h2>
           <p>
-            저는 다양한 형태의 UI에 대한 이해도가 높아, 디자인을 정확하게
-            화면으로 구현합니다. 능동적인 업무 자세로 기획자, 디자이너 등 유관
-            부서와 협업에도 적극적이고 유연한 소통 가능하며, 끊임없는 공부와
-            성장을 즐기고 있습니다.
+            복잡한 산업 도메인을 실제 제품 UI로 전환하는 프론트엔드
+            개발자입니다. 2019년부터 React, Next.js, TypeScript를 중심으로
+            LCA/LCCI, 탄소 크레딧, Web3, IoT, STO 등 다양한 도메인에서 입력,
+            검증, 시각화, 리포트, 운영 화면을 설계하고 구현했습니다. 특히 대규모
+            데이터 입력·검증 UI, Flow Editor, API 전환, i18n, 공통 컴포넌트 구축,
+            운영 안정화 경험이 있습니다.
           </p>
         </section>
         <section className="main-item" data-aos="fade-up">

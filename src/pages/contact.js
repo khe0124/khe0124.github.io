@@ -37,7 +37,11 @@ const Contact = ({ data, location }) => {
   const btnList = extlink || []
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Contact" />
+      <Seo
+        title="연락처"
+        description="프론트엔드 개발자 강하은에게 연락하기 — 이메일, GitHub, LinkedIn."
+        pathname={location.pathname}
+      />
       <ProfilePic>
         <div>
           <FishIcon isContact={true} />

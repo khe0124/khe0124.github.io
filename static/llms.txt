@@ -1,0 +1,53 @@
+# 강하은 (Kang Haeun) — 프론트엔드 개발자
+
+> 복잡한 산업 도메인을 실제 사용자가 이해하고 사용할 수 있는 제품 UI로 바꾸는 프론트엔드 개발자입니다. 2019년부터 React, Next.js, TypeScript, Vue 기반 웹 애플리케이션을 개발하며 LCA/LCCI, 탄소 크레딧, Web3, IoT, STO 등 비즈니스 규칙이 복잡한 도메인에서 입력·검증·시각화·리포트·운영 화면을 설계·구현해 왔습니다.
+
+## 프로필
+
+- 이름: 강하은 (Kang Haeun)
+- 직무: 프론트엔드 개발자 (Frontend Developer)
+- 위치: 서울, 대한민국
+- 사이트: https://khe0124.github.io/
+- 핵심 역량: 복잡한 도메인 로직을 사용자 플로우·UI/UX로 전환, B2B SaaS·Admin Console 화면 설계, 대규모 입력·검증·데이터 관리 화면(Data Grid, Flow Editor, Chart, PDF/Excel Export), 디자인 시스템·공통 컴포넌트 구축, API 전환·i18n·운영 안정화
+
+## 기술 스택
+
+- Frontend: React, Next.js, TypeScript, JavaScript, Redux, Redux Toolkit, React Flow, Vue2/Vue3, React Native
+- UI/Style: MUI, Data Grid Pro, Chakra UI, Tailwind CSS, Styled-components, SCSS, Storybook
+- Markup: HTML/CSS, Pug, Stylus
+- Backend/Etc.: Node.js, Nest.js, Python, Web3.js, Firebase, Vite, Webpack, i18next
+- Tools: Figma, Zeplin, Git, Jira, Confluence, Amplitude
+
+## 경력
+
+- Greenery (그리너리) — 프론트엔드 개발자 (2022.08 ~ 재직중): LCA/LCCI 플랫폼과 POPLE 탄소 크레딧 플랫폼을 중심으로, Web3 자산관리·STO 트레이딩·에너지 IoT 등 5개+ 인접 도메인의 사용자 화면과 Admin Console 프론트엔드 개발. Data Grid 기반 대규모 입력/검증 UI, Canvas 공정 흐름도 에디터, PDF/Excel 리포트, API 전환, i18n 인프라 구축.
+- H-Energy (에이치에너지) — 프론트엔드 개발자 (2020.05 ~ 2022.08): Vue/Quasar 기반 태양광 옥상 공유 투자 플랫폼과 공식 웹사이트 개발 (Chart.js 통계, Kakao Map, 소셜 공유, Firebase 배포).
+- Geeks Family (긱스패밀리) — 프론트엔드 개발자 (2019.12 ~ 2020.04): JavaScript/jQuery 기반 어드민 UI 및 통계 페이지 개발.
+- FineInsight (파인인사이트) — 인하우스 디자이너 (2016.08 ~ 2019.01): 편집 디자인, Web/App UI 디자인. 프론트엔드 전환의 기반이 된 경험.
+- Yanolja (야놀자) — 콘텐츠 본부 디자인 인턴 (2015.06 ~ 2015.12).
+
+## 대표 프로젝트
+
+- LCA/LCCI Platform: 전과정평가 생성·분석·관리 통합 플랫폼. 공정 흐름도 에디터, 대규모 입력 그리드, LCI DB 연동, 결과 시각화, PDF/Excel 리포트 다운로드.
+- POPLE Carbon Credit / Marketplace / Registry: 탄소 크레딧 발행·거래·레지스트리 통합 플랫폼. 전체 API 전환, 핵심 플로우 리팩토링, i18n 인프라 구축, Front/Admin UI 개선.
+- Web3 Asset Management Service: Metamask 연동 기반 Web3 자산 관리 서비스. 지갑 연결·주소 검증·트랜잭션 상태 알림·자산/거래내역/세금 페이지·Admin 기능.
+- Rooftop Investment Platform: 태양광 옥상 공유 투자 플랫폼. Vue 기반 전체 UI, Chart.js 통계, Kakao Map 위치 표시, 소셜 공유.
+
+## 학력 / 자격
+
+- 국민대학교 공업디자인학과 학사 (2010 ~ 2015)
+- 정보처리기사 (2019)
+
+## 링크
+
+- GitHub: https://github.com/khe0124
+- LinkedIn: https://www.linkedin.com/in/khe0124
+- Blog: https://seaweedisland.tistory.com/
+- Email: khe0124@gmail.com
+
+## 페이지
+
+- 홈: https://khe0124.github.io/
+- 이력서: https://khe0124.github.io/resume/
+- 프로젝트: https://khe0124.github.io/project/
+- 연락처: https://khe0124.github.io/contact/

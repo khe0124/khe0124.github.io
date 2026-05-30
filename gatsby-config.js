@@ -3,9 +3,9 @@ module.exports = {
     title: `프론트엔드 개발자 강하은 | 열대섬 해초 속 개발자`,
     author: {
       name: `0124`,
-      summary: `프론트엔드 개발자 강하은입니다.`,
+      summary: `복잡한 산업 도메인을 제품 UI로 만드는 프론트엔드 개발자 강하은입니다.`,
     },
-    description: `UI디자인과 자바스크립트를 좋아하는 프론트엔드 개발자 강하은입니다.`,
+    description: `복잡한 산업 도메인을 실제 사용자가 사용할 수 있는 제품 UI로 만드는 프론트엔드 개발자 강하은입니다. React, Next.js, TypeScript 기반으로 LCA/LCCI, 탄소 크레딧, Web3 등 B2B SaaS 제품을 개발합니다.`,
     image: ``,
     siteUrl: `https://khe0124.github.io/`,
     social: {
@@ -29,7 +29,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://khe0124.github.io/",
-        sitemap: "https://khe0124.github.io/sitemap.xml",
+        sitemap: "https://khe0124.github.io/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -59,18 +59,12 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-plugin-sitemap`,
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -102,7 +96,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } }
                 ) {
                   nodes {
                     excerpt
@@ -119,7 +113,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "강하은 | 프론트엔드 개발자 RSS Feed",
           },
         ],
       },
@@ -127,8 +121,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `프론트엔드 개발자 강하은`,
+        short_name: `강하은`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website

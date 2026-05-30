@@ -32,6 +32,36 @@ const ExpTaskList = styled.div`
   }
 `
 
+const ProjectList = styled.div`
+  padding-top: 8px;
+`
+
+const ProjectItem = styled.div`
+  padding: 16px 0;
+  border-bottom: 1px dotted var(--color-grey-d);
+  h4 {
+    font-size: 16px;
+    margin: 0;
+    padding: 4px 0;
+    color: var(--color-grey-1);
+  }
+  p.stacks {
+    font-size: 13px;
+    color: var(--color-grey-9);
+    margin: 0;
+    word-break: keep-all;
+  }
+  ul {
+    margin: 0;
+    padding: 12px 0 4px 16px;
+  }
+  li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    word-break: keep-all;
+  }
+`
+
 const ImageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -80,7 +110,16 @@ const ItemContent = styled.div`
   }
 `
 
-const ExpItem = ({ company, desc, period, images, role, stacks, tasks }) => {
+const ExpItem = ({
+  company,
+  desc,
+  period,
+  images,
+  role,
+  stacks,
+  tasks,
+  projects,
+}) => {
   return (
     <ExpWrapper>
       <ExpHeader>
@@ -107,9 +146,9 @@ const ExpItem = ({ company, desc, period, images, role, stacks, tasks }) => {
         </ItemTableWrapper>
         {images && (
           <ImageWrapper>
-            {images.map(img => (
-              <div>
-                <img src={img} alt="" />
+            {images.map((img, i) => (
+              <div key={img}>
+                <img src={img} alt={`${company} 프로젝트 화면 ${i + 1}`} />
               </div>
             ))}
           </ImageWrapper>
@@ -122,6 +161,23 @@ const ExpItem = ({ company, desc, period, images, role, stacks, tasks }) => {
               ))}
             </ul>
           </ExpTaskList>
+        )}
+        {projects && (
+          <ProjectList>
+            {projects.map(project => (
+              <ProjectItem key={project.name}>
+                <h4>{project.name}</h4>
+                {project.stacks && <p className="stacks">{project.stacks}</p>}
+                {project.tasks && (
+                  <ul>
+                    {project.tasks.map(task => (
+                      <li key={task}>{task}</li>
+                    ))}
+                  </ul>
+                )}
+              </ProjectItem>
+            ))}
+          </ProjectList>
         )}
       </ExpBody>
     </ExpWrapper>

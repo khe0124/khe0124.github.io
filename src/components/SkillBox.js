@@ -31,13 +31,20 @@ const SkillBoxWrapper = styled.div`
 `
 
 const SkillBox = () => {
-  const imageList = [icon01, icon02, icon03, icon04, icon05, icon06]
+  const imageList = [
+    { src: icon01, label: "JavaScript" },
+    { src: icon02, label: "TypeScript" },
+    { src: icon03, label: "React" },
+    { src: icon04, label: "Vue.js" },
+    { src: icon05, label: "HTML" },
+    { src: icon06, label: "CSS" },
+  ]
   return (
     <SkillBoxWrapper>
       {imageList &&
         imageList.map(e => (
-          <div key={e}>
-            <img src={e} alt="" />
+          <div key={e.src}>
+            <img src={e.src} alt={`${e.label} 아이콘`} />
           </div>
         ))}
     </SkillBoxWrapper>

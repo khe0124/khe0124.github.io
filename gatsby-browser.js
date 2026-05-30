@@ -1,6 +1,5 @@
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+import "@fontsource/merriweather"
 // font
 import "@fontsource/noto-sans-kr"
 // normalize CSS across browsers
