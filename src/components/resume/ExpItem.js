@@ -1,34 +1,72 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
 const ExpWrapper = styled.div`
-  padding-top: 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-grey-d);
+
+  /* PC / Tablet: 좌(회사명·기간) / 우(롤·설명·이력) 2단 */
+  @media screen and (min-width: 767px) {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+  }
 `
-const ExpHeader = styled.div`
+
+const ExpAside = styled.div`
   h3 {
     font-size: 20px;
     margin: 0;
-    padding: 8px 0;
+    padding: 0 0 8px;
+    word-break: keep-all;
   }
-  p {
+  p.period {
     font-size: 14px;
     color: var(--color-grey-9);
-    word-break: keep-all;
     margin: 0;
   }
 `
-const ExpBody = styled.div``
-const ExpImage = styled.div``
+
+const ExpBody = styled.div`
+  p.role {
+    color: var(--color-primary);
+    font-weight: var(--fontWeight-bold);
+    margin: 0;
+  }
+  p.desc {
+    font-size: 14px;
+    color: var(--color-grey-3);
+    line-height: 1.7;
+    word-break: keep-all;
+    margin: 8px 0 0;
+  }
+  p.stacks {
+    font-size: 14px;
+    color: var(--color-grey-9);
+    word-break: keep-all;
+    margin: 12px 0 0;
+  }
+  p.stacks span {
+    color: var(--color-primary);
+    font-weight: var(--fontWeight-bold);
+    margin-right: 8px;
+  }
+
+  /* 모바일에서는 회사명 아래로 자연스럽게 이어지도록 여백 */
+  @media screen and (max-width: 766px) {
+    padding-top: 12px;
+  }
+`
+
 const ExpTaskList = styled.div`
   ul {
     margin: 0;
-    /* list-style: none; */
-    padding: 24px 0 16px 16px;
+    padding: 20px 0 4px 16px;
   }
   li {
     font-size: 14px;
     margin-bottom: 8px;
+    word-break: keep-all;
   }
 `
 
@@ -39,6 +77,9 @@ const ProjectList = styled.div`
 const ProjectItem = styled.div`
   padding: 16px 0;
   border-bottom: 1px dotted var(--color-grey-d);
+  &:last-child {
+    border-bottom: none;
+  }
   h4 {
     font-size: 16px;
     margin: 0;
@@ -80,36 +121,6 @@ const ImageWrapper = styled.div`
   }
 `
 
-const ItemTableWrapper = styled.div`
-  padding-top: 16px;
-`
-
-const ItemRow = styled.div`
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  border-bottom: 1px dotted var(--color-grey-d);
-  padding: 16px 0;
-`
-
-const ItemTitle = styled.div`
-  color: var(--color-primary);
-  font-weight: var(--fontWeight-bold);
-`
-const ItemContent = styled.div`
-  padding: 0 16px;
-  p {
-    color: var(--color-grey-3);
-    font-weight: var(--fontWeight-bold);
-    margin: 0;
-  }
-
-  p.period {
-    color: var(--color-grey-9);
-    font-weight: var(--fontWeight-light);
-    font-size: 14px;
-  }
-`
-
 const ExpItem = ({
   company,
   desc,
@@ -122,28 +133,19 @@ const ExpItem = ({
 }) => {
   return (
     <ExpWrapper>
-      <ExpHeader>
+      <ExpAside>
         <h3>{company}</h3>
-        <p>{desc}</p>
-      </ExpHeader>
+        {period && <p className="period">{period}</p>}
+      </ExpAside>
       <ExpBody>
-        <ItemTableWrapper>
-          <ItemRow>
-            <ItemTitle>Role</ItemTitle>
-            <ItemContent>
-              <p className="period">{period}</p>
-              <p>{role}</p>
-            </ItemContent>
-          </ItemRow>
-          {stacks && (
-            <ItemRow>
-              <ItemTitle>Stacks</ItemTitle>
-              <ItemContent>
-                <p>{stacks}</p>
-              </ItemContent>
-            </ItemRow>
-          )}
-        </ItemTableWrapper>
+        {role && <p className="role">{role}</p>}
+        {desc && <p className="desc">{desc}</p>}
+        {stacks && (
+          <p className="stacks">
+            <span>Stacks</span>
+            {stacks}
+          </p>
+        )}
         {images && (
           <ImageWrapper>
             {images.map((img, i) => (
