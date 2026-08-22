@@ -54,9 +54,11 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
 
 # Mac files
 .DS_Store
@@ -67,3 +69,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# 사용자 작성 개인 요약본 (공개 저장소라 커밋하지 않음)
+profile.md

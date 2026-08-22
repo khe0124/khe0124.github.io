@@ -1,4 +1,6 @@
-.cache
-package.json
+.next
+out
+node_modules
 package-lock.json
 public
+profile.md
