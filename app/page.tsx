@@ -17,7 +17,25 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const introduce =
-  "산업디자인을 전공하고 UI/UX 디자이너로 일하다가, 화면을 그리는 데서 멈추지 않고 직접 동작하게 만들고 싶어 프론트엔드 개발자가 됐습니다. 이후 7년간 React, Next.js, TypeScript를 중심으로 LCA/LCCI, 탄소 크레딧, VCM 레지스트리, Web3, IoT, STO 같은 도메인에서 입력·검증·시각화·리포트·운영 화면을 설계하고 구현했습니다. 복잡한 업무 규칙을 사용자가 실제로 따라갈 수 있는 흐름으로 바꾸는 일에 강점이 있고, 대규모 입력·검증 UI, Flow Editor, API 전환, i18n, 공통 컴포넌트 구축 경험을 쌓았습니다. 최근에는 AI를 활용해 백엔드 도메인 구현까지 작업 범위를 넓히며, 제품 전체를 만드는 개발자로 확장해 나가고 있습니다."
+  "산업디자인에서 출발해 UI/UX를 거쳐 프론트엔드 개발자로 일해왔습니다. React, Next.js, TypeScript로 LCA/LCCI, VCM Registry, 탄소 크레딧, Web3, IoT, STO처럼 복잡한 B2B 제품의 화면과 흐름을 만들었고, 최근에는 AI를 활용해 백엔드 구현까지 작업 범위를 넓히고 있습니다."
+
+const strengths = [
+  {
+    label: "Product Interfaces",
+    title: "복잡한 도메인의 제품 인터페이스를 만듭니다",
+    desc: "탄소시장, LCA, Web3처럼 설명이 어려운 업무 규칙을 사용자가 따라갈 수 있는 화면과 흐름으로 정리합니다.",
+  },
+  {
+    label: "Frontend Systems",
+    title: "반복 가능한 프론트엔드 구조를 만듭니다",
+    desc: "Data Grid, form validation, 상태 기반 ActionBar, 차트·리포트 UI처럼 운영 제품에 필요한 UI 패턴을 다뤄왔습니다.",
+  },
+  {
+    label: "AI-assisted Tools",
+    title: "AI를 활용해 빠르게 실험하고 구현합니다",
+    desc: "프론트엔드를 중심으로 하되 AI 개발 워크플로우를 활용해 Spring Boot 기반 백엔드 도메인 구현과 테스트까지 확장하고 있습니다.",
+  },
+]
 
 /** 홈 페이지 구조화 데이터. 전역 Person/WebSite 노드에 연결해 실체를 하나로 묶습니다. */
 function HomeJsonLd() {
@@ -62,12 +80,21 @@ export default function HomePage() {
         </div>
 
         <div className="keep-all py-6 text-muted">
-          <p className="m-0">
-            산업디자인에서 출발해 UI/UX를 거쳐 7년간{" "}
-            <Link href="/resume">프론트엔드 개발</Link>을 해왔습니다.
+          <p
+            lang="en"
+            className="m-0 text-[1.44rem] leading-9 font-semibold text-ink-soft"
+          >
+            I build product interfaces
+            <br />
+            for complex domains.
           </p>
-          <p className="m-0">
-            현재는 AI를 활용하여 풀스택 개발까지 범위를 확장해 나가고 있습니다.
+          <p className="m-0 mt-3 leading-7">
+            산업디자인에서 출발해 UI/UX를 거쳐{" "}
+            <Link href="/resume" className="underline underline-offset-4">
+              프론트엔드 개발자
+            </Link>
+            로 일해왔습니다. 복잡한 아이디어를 사용자가 따라갈 수 있는 제품
+            화면과 흐름으로 만듭니다.
           </p>
         </div>
       </section>
@@ -75,6 +102,31 @@ export default function HomePage() {
       <Reveal as="section" className="px-2 pb-6">
         <h2 className="mt-0 mb-4 text-[1.44rem] font-bold">Introduce.</h2>
         <p className="keep-all m-0 leading-relaxed text-muted">{introduce}</p>
+      </Reveal>
+
+      <Reveal as="section" className="px-2 pb-6" delay={40}>
+        <h2 className="mt-0 mb-4 text-[1.44rem] font-bold">Things I make.</h2>
+        <div className="grid gap-3 md:grid-cols-3">
+          {strengths.map(item => (
+            <article
+              key={item.label}
+              className="border-primary/60 bg-primary-pale/20 border p-4"
+            >
+              <p
+                lang="en"
+                className="m-0 font-mono text-[11px] tracking-[0.12em] text-primary-text uppercase"
+              >
+                {item.label}
+              </p>
+              <h3 className="keep-all mt-3 mb-0 text-[1rem] leading-snug font-bold">
+                {item.title}
+              </h3>
+              <p className="keep-all mt-3 mb-0 text-sm leading-6 text-muted">
+                {item.desc}
+              </p>
+            </article>
+          ))}
+        </div>
       </Reveal>
 
       <Reveal as="section" className="px-2 pb-6" delay={80}>

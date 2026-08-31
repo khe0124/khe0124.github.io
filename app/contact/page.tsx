@@ -57,9 +57,35 @@ export default function ContactPage() {
           </p>
         </div>
         <p className="keep-all m-0 whitespace-pre-wrap text-muted">
-          {`편하신 수단을 통해서\n연락주시기 바랍니다. 감사합니다.`}
+          {`복잡한 B2B 제품 UI, 데이터 입력·검증 화면,\nAI-assisted full-stack 개발 이야기를 편하게 나눌 수 있습니다.`}
         </p>
       </div>
+
+      <section className="mx-auto max-w-xl px-6 py-4">
+        <h2 className="sr-only">연락 가능 주제</h2>
+        <div className="grid gap-3 text-left md:grid-cols-2">
+          <article className="border-primary/60 border p-4">
+            <h3 className="m-0 text-[0.95rem] font-bold text-primary-text">
+              관심 있는 일
+            </h3>
+            <ul className="keep-all mt-3 mb-0 space-y-1 pl-4 text-sm leading-6 text-muted">
+              <li>복잡한 B2B SaaS 프론트엔드</li>
+              <li>데이터 입력·검증·시각화 UI</li>
+              <li>AI 활용 제품 개발 워크플로우</li>
+            </ul>
+          </article>
+          <article className="border-primary/60 border p-4">
+            <h3 className="m-0 text-[0.95rem] font-bold text-primary-text">
+              연락 가능 주제
+            </h3>
+            <ul className="keep-all mt-3 mb-0 space-y-1 pl-4 text-sm leading-6 text-muted">
+              <li>프론트엔드 포지션</li>
+              <li>제품 UI 구조화와 운영 화면</li>
+              <li>사이드 프로젝트와 협업</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
       <div className="m-auto flex flex-col items-center gap-2 py-6">
         {extlink.map(item => (

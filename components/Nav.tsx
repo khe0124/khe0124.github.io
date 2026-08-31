@@ -12,7 +12,7 @@ export default function Nav() {
 
   return (
     <nav aria-label="주요 메뉴" className="border-line border-b py-4">
-      <ul role="list" className="grid grid-cols-4">
+      <ul role="list" className="flex flex-wrap gap-x-5 gap-y-2">
         {route.map(item => {
           const active = !item.external && isActive(item.link)
           const className = `group font-title inline-block py-2 no-underline ${

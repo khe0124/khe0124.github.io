@@ -7,29 +7,38 @@ export const SITE = {
   brand: "강하은 포트폴리오",
   name: "강하은",
   nameEn: "Kang Haeun",
-  jobTitle: "프론트엔드 개발자",
+  jobTitle: "Frontend Engineer",
   /** 화면에 노출되는 정체성 라벨 (푸터 등) */
-  tagline: "AI Builder",
+  tagline: "AI-assisted Product Builder",
   /**
    * 구조화 데이터용 직함 목록.
    * "프론트엔드 개발자"는 실제 검색되는 키워드라 남기고, 새 포지셔닝을 함께 노출합니다.
    */
-  jobTitles: ["프론트엔드 개발자", "AI Builder"],
+  jobTitles: [
+    "Product Interface Builder",
+    "Frontend Engineer",
+    "프론트엔드 개발자",
+    "AI-assisted Product Builder",
+  ],
   locale: "ko_KR",
   lang: "ko",
   email: "khe0124@gmail.com",
   location: "Seoul, South Korea",
-  title: "프론트엔드 개발자 강하은 | 열대섬 해초 속 개발자",
+  title: "강하은 | Product Interface Builder & Frontend Engineer",
   description:
-    "산업디자인에서 출발해 UI/UX를 거쳐 7년간 프론트엔드를 개발해온 강하은입니다. React, Next.js, TypeScript로 LCA/LCCI, 탄소 크레딧, Web3 등 복잡한 B2B 도메인을 제품 UI로 만들고, 최근에는 AI를 활용해 풀스택으로 범위를 넓히고 있습니다.",
+    "산업디자인에서 출발해 UI/UX를 거쳐 7년간 프론트엔드 개발자로 일해온 강하은입니다. React, Next.js, TypeScript로 복잡한 B2B 제품의 화면과 흐름을 만들고, 최근에는 AI를 활용해 백엔드 구현까지 작업 범위를 넓히고 있습니다.",
   ogImage: "/images/thumb.png",
+  favicon: "/favicon.png",
   sameAs: [
     "https://github.com/khe0124",
     "https://www.linkedin.com/in/khe0124",
+    "https://oold-works.vercel.app/",
     "https://seaweedisland.tistory.com/",
   ],
   keywords: [
     "프론트엔드 개발자",
+    "Frontend Engineer",
+    "Product Interface Builder",
     "강하은",
     "Kang Haeun",
     "React",

@@ -5,8 +5,9 @@ import {
   highlights,
   spec,
 } from "@/contents/resume.constant"
-import { others, side } from "@/contents/project.constant"
+import { others, selected, side } from "@/contents/project.constant"
 import { skills } from "@/contents/skill.constant"
+import { getAllWritings } from "@/lib/writings"
 
 export const dynamic = "force-static"
 
@@ -27,7 +28,7 @@ function buildLlmsTxt(): string {
   lines.push("## 프로필", "")
   lines.push(`- 이름: ${SITE.name} (${SITE.nameEn})`)
   lines.push(
-    `- 직무: ${SITE.jobTitles.join(" · ")} (Frontend Developer · AI Builder)`,
+    `- 직무: ${SITE.jobTitles.join(" · ")} (Frontend Developer · AI-assisted Product Builder)`,
   )
   lines.push(`- 위치: ${SITE.location}`)
   lines.push(`- 사이트: ${SITE_URL}/`)
@@ -60,6 +61,22 @@ function buildLlmsTxt(): string {
     }
   }
 
+  lines.push("## 대표 프로젝트", "")
+  for (const project of selected) {
+    lines.push(`### ${project.label}`, "")
+    lines.push(`- 역할: ${project.role}`)
+    lines.push(`- 범위: ${project.scope}`)
+    lines.push(`- 기술: ${project.stacks}`)
+    lines.push(`- 개요: ${project.summary}`)
+    lines.push(`- 문제: ${project.problem}`)
+    lines.push("- 해결")
+    for (const item of project.solution) lines.push(`  - ${item}`)
+    lines.push("- 결과")
+    for (const item of project.impact) lines.push(`  - ${item}`)
+    if (project.note) lines.push(`- 공개 범위: ${project.note}`)
+    lines.push("")
+  }
+
   lines.push("## 사이드 프로젝트", "")
   for (const project of side) {
     lines.push(`### ${project.label}`, "")
@@ -78,6 +95,15 @@ function buildLlmsTxt(): string {
   }
   lines.push("")
 
+  const writings = getAllWritings()
+  lines.push("## 글", "")
+  for (const post of writings) {
+    lines.push(
+      `- ${post.title} (${post.date}) — ${post.description} / ${SITE_URL}/writing/${post.slug}/`,
+    )
+  }
+  lines.push("")
+
   lines.push("## 학력 / 자격", "")
   lines.push(`- ${spec.education.name} (${spec.education.year})`)
   lines.push(`- ${spec.certificate.name} (${spec.certificate.year})`, "")
@@ -89,7 +115,9 @@ function buildLlmsTxt(): string {
   lines.push("## 페이지", "")
   lines.push(`- 홈: ${SITE_URL}/`)
   lines.push(`- 이력서: ${SITE_URL}/resume/`)
-  lines.push(`- 프로젝트: ${SITE_URL}/project/`)
+  lines.push(`- Build: ${SITE_URL}/project/`)
+  lines.push(`- 글: ${SITE_URL}/writing/`)
+  lines.push(`- RSS: ${SITE_URL}/feed.xml`)
   lines.push(`- 연락처: ${SITE_URL}/contact/`)
   lines.push("")
 
