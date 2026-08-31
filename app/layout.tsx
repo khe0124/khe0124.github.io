@@ -1,15 +1,6 @@
 import type { Metadata, Viewport } from "next"
-import { Noto_Sans_KR } from "next/font/google"
 import { SITE, SITE_URL } from "@/contents/site.constant"
 import "./globals.css"
-
-// 가변 폰트로 불러옵니다. weight를 나열하면 한글 서브셋 × weight 만큼 @font-face가 생겨
-// 렌더링을 막는 CSS가 수백 KB로 불어납니다.
-const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-noto-sans-kr",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -124,7 +115,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={SITE.lang} className={notoSansKr.variable}>
+    <html lang={SITE.lang}>
       <head>
         <SiteJsonLd />
         {/* 스크롤 등장 효과는 JS로 켜집니다. JS가 없으면 콘텐츠가 숨겨지지 않도록 되돌립니다. */}

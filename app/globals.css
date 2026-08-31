@@ -1,6 +1,7 @@
+@import url("https://cdn.jsdelivr.net/npm/pretendard/dist/web/variable/pretendardvariable.css");
 @import "tailwindcss";
 
-/* 구글 폰트에 없는 제목용 서체만 직접 로드합니다. 본문 폰트는 next/font로 셀프 호스팅합니다. */
+/* 구글 폰트에 없는 제목용 서체만 직접 로드합니다. */
 @font-face {
   font-family: "GangwonEduPowerExtraBoldA";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
@@ -31,10 +32,9 @@
   --color-line-soft: #eeeeee;
 
   --font-sans:
-    var(--font-noto-sans-kr), "Noto Sans KR", "Apple SD Gothic Neo", system-ui,
-    sans-serif;
-  --font-title:
-    "GangwonEduPowerExtraBoldA", var(--font-noto-sans-kr), sans-serif;
+    "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR",
+    system-ui, sans-serif;
+  --font-title: "GangwonEduPowerExtraBoldA", "Pretendard Variable", sans-serif;
   --font-mono:
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
