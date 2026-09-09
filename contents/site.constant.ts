@@ -1,5 +1,5 @@
 /** 사이트 전역 메타 정보. SEO 메타태그·JSON-LD·sitemap·robots가 모두 이 값을 참조합니다. */
-export const SITE_URL = "https://khe0124.github.io"
+export const SITE_URL = "https://kang-haeun.me"
 
 export const SITE = {
   url: SITE_URL,

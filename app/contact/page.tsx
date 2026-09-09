@@ -53,7 +53,7 @@ export default function ContactPage() {
         <div className="flex flex-col items-center py-9 pb-4">
           <FishIcon variant="lined" asLink={false} />
           <p className="m-0 pt-4 text-sm text-primary-text">
-            열대섬 해초속의 작은 개발자
+            복잡한 제품을 함께 풀어가는 프론트엔드 개발자
           </p>
         </div>
         <p className="keep-all m-0 whitespace-pre-wrap text-muted">

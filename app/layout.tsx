@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import { GeistMono, GeistSans } from "geist/font"
 import { SITE, SITE_URL } from "@/contents/site.constant"
 import "./globals.css"
 
@@ -123,7 +124,7 @@ export default function RootLayout({
           <style>{`.reveal{opacity:1;transform:none}`}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>{children}</body>
     </html>
   )
 }

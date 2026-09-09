@@ -11,7 +11,7 @@ type PageShellProps = {
    * "p"로 내려 h1이 중복되지 않게 합니다.
    */
   titleTag?: "h1" | "p"
-  /** 이력서·프로젝트처럼 2단 레이아웃이 필요한 페이지는 wide를 사용합니다. */
+  /** 기존 호출 호환을 위해 유지하며, PC 콘텐츠 폭은 모든 페이지에서 동일합니다. */
   width?: "narrow" | "wide"
   children: ReactNode
 }
@@ -19,10 +19,9 @@ type PageShellProps = {
 export default function PageShell({
   title,
   titleTag: TitleTag = "h1",
-  width = "narrow",
   children,
 }: PageShellProps) {
-  const maxWidth = width === "wide" ? "max-w-5xl" : "max-w-2xl"
+  const maxWidth = "max-w-2xl"
 
   return (
     <div className={`mx-auto w-full ${maxWidth} px-5 py-10`}>
@@ -32,7 +31,7 @@ export default function PageShell({
 
       {title ? (
         <>
-          <header className="print-hidden flex items-center">
+          <header className="site-header print-hidden flex h-10 min-h-10 items-center">
             <FishIcon />
             {/* 영문 제목이라 한국어 음성으로 읽히지 않도록 언어를 표시합니다 (WCAG 3.1.2). */}
             <TitleTag
@@ -42,7 +41,7 @@ export default function PageShell({
               {title}
             </TitleTag>
           </header>
-          <div className="print-hidden">
+          <div className="site-nav print-hidden min-h-[65px]">
             <Nav />
           </div>
         </>

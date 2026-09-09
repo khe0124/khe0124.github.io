@@ -1,15 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/pretendard/dist/web/variable/pretendardvariable.css");
 @import "tailwindcss";
-
-/* 구글 폰트에 없는 제목용 서체만 직접 로드합니다. */
-@font-face {
-  font-family: "GangwonEduPowerExtraBoldA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 @theme {
   /*
@@ -32,11 +21,21 @@
   --color-line-soft: #eeeeee;
 
   --font-sans:
-    "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR",
+    var(--font-geist-sans), "Apple SD Gothic Neo", "Noto Sans KR", system-ui,
+    sans-serif;
+  --font-title: var(--font-geist-sans), "Apple SD Gothic Neo", "Noto Sans KR",
+    sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
+}
+
+:root {
+  --font-sans: var(--font-geist-sans), "Apple SD Gothic Neo", "Noto Sans KR",
     system-ui, sans-serif;
-  --font-title: "GangwonEduPowerExtraBoldA", "Pretendard Variable", sans-serif;
-  --font-mono:
-    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-title: var(--font-geist-sans), "Apple SD Gothic Neo", "Noto Sans KR",
+    sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
 }
 
 @layer base {
@@ -44,6 +43,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -279,6 +279,18 @@
   .resume-print section,
   .resume-print article > div {
     break-inside: avoid;
+  }
+
+  .resume-print h1,
+  .resume-print h2,
+  .resume-print h3,
+  .resume-print h4 {
+    break-after: avoid;
+  }
+
+  .resume-print a {
+    color: #111111;
+    text-decoration: none;
   }
 
   a[href]::after {

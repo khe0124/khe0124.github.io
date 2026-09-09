@@ -3,7 +3,7 @@
 프론트엔드 개발자 **강하은**의 포트폴리오 사이트입니다.
 [Next.js](https://nextjs.org/) App Router로 제작했으며 정적 내보내기 결과를 GitHub Pages로 배포합니다.
 
-🔗 https://khe0124.github.io/
+🔗 https://kang-haeun.me/
 
 ## 기술 스택
 

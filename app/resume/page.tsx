@@ -130,13 +130,29 @@ export default function ResumePage() {
                   {SITE.email}
                 </a>
               </p>
-              <p className="m-0">khe0124.github.io</p>
+              <p className="m-0">kang-haeun.me</p>
             </div>
           </div>
           <p className="keep-all mt-8 max-w-3xl text-[0.95rem] leading-7 text-ink-soft">
             {description}
           </p>
         </header>
+
+        <section className="grid gap-4 border-b border-line py-8 md:grid-cols-3" aria-labelledby="resume-fit-title">
+          <h2 id="resume-fit-title" className="m-0 text-[1.2rem] font-medium">At a glance</h2>
+          <div className="md:col-span-2 grid gap-3 sm:grid-cols-3">
+            {[
+              ["7년 차", "프론트엔드 경력"],
+              ["React · TS", "주요 제품 스택"],
+              ["B2B · Admin", "업무형 제품 경험"],
+            ].map(([value, label]) => (
+              <div key={label} className="border-line border p-3">
+                <p className="m-0 font-mono text-sm font-bold text-primary-text">{value}</p>
+                <p className="m-0 mt-1 text-xs text-muted">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="flex flex-col gap-5 border-b border-line py-8">
           <h2 lang="en" className="m-0 text-[1.2rem] font-medium">

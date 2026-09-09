@@ -78,6 +78,10 @@ export default function WritingPage() {
           프론트엔드와 제품 만들기, 디자인에서 개발로 이어진 관심사, AI를 활용한
           작업 방식에 대해 씁니다.
         </p>
+        <p className="keep-all mt-3 mb-0 text-sm leading-6 text-primary-text">
+          현재는 대규모 폼과 업무형 UI를 다룬 대표 글부터 공개하고, Build의 사례를
+          바탕으로 후속 글을 이어갑니다.
+        </p>
         <p className="mt-4 mb-0 text-sm text-muted">
           <a href="/feed.xml" className="underline underline-offset-4">
             RSS 구독

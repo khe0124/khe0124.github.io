@@ -19,7 +19,7 @@ export default function FishIcon({
 }: FishIconProps) {
   const src =
     variant === "filled" ? "/images/fish_filled.svg" : "/images/fish.svg"
-  const box = `animate-fish flex h-10 w-10 shrink-0 rounded-full shadow-[0_4px_4px_0_rgba(0,47,134,0.2)] ${className}`
+  const box = `flex h-10 w-10 shrink-0 rounded-full shadow-[0_4px_4px_0_rgba(0,47,134,0.2)] ${className}`
   const img = (
     <Image
       src={src}
