@@ -16,7 +16,7 @@ export default function Nav() {
         {route.map(item => {
           const active = !item.external && isActive(item.link)
           const label = item.label.toUpperCase()
-          const className = `group font-title inline-block py-2 text-[0.95rem] no-underline ${
+          const className = `group font-title inline-block py-2 text-sm no-underline ${
             active ? "text-primary-text" : "text-ink-soft"
           }`
 

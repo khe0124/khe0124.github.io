@@ -9,7 +9,7 @@ import route from "@/contents/route.constant"
 export default function SiteFooter() {
   return (
     <footer className="print-hidden text-muted mt-16 border-t border-slate-300 pt-6 text-sm">
-      <nav aria-label="푸터 메뉴">
+      <nav aria-label="푸터 메뉴" className="text-xs">
         <ul role="list" className="flex flex-wrap gap-x-5 gap-y-2">
           {route.map(item => (
             <li key={item.label}>
