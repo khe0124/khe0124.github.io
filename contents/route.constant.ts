@@ -8,7 +8,6 @@ export type Route = {
 export const route: Route[] = [
   { label: "build", external: false, link: "/project", emoji: "💻" },
   { label: "resume", external: false, link: "/resume", emoji: "📕" },
-  { label: "writing", external: false, link: "/writing", emoji: "✍️" },
   { label: "contact", external: false, link: "/contact", emoji: "📮" },
   {
     label: "blog ↗",

@@ -15,7 +15,8 @@ export default function Nav() {
       <ul role="list" className="flex flex-wrap gap-x-5 gap-y-2">
         {route.map(item => {
           const active = !item.external && isActive(item.link)
-          const className = `group font-title inline-block py-2 no-underline ${
+          const label = item.label.toUpperCase()
+          const className = `group font-title inline-block py-2 text-[0.95rem] no-underline ${
             active ? "text-primary-text" : "text-ink-soft"
           }`
 
@@ -28,7 +29,7 @@ export default function Nav() {
                   rel="noopener noreferrer me"
                   className={className}
                 >
-                  <span className="underline-swipe">{item.label}</span>
+                  <span className="underline-swipe">{label}</span>
                   <span className="sr-only"> (새 창에서 열림)</span>
                 </a>
               ) : (
@@ -37,7 +38,7 @@ export default function Nav() {
                   aria-current={active ? "page" : undefined}
                   className={className}
                 >
-                  <span className="underline-swipe">{item.label}</span>
+                  <span className="underline-swipe">{label}</span>
                 </Link>
               )}
             </li>

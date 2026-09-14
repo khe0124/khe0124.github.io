@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import FishIcon from "@/components/FishIcon"
+import FloatingActions from "@/components/FloatingActions"
 import Nav from "@/components/Nav"
 import SiteFooter from "@/components/SiteFooter"
 
@@ -51,6 +52,7 @@ export default function PageShell({
         {children}
       </main>
 
+      <FloatingActions />
       <SiteFooter />
     </div>
   )

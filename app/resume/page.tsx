@@ -109,7 +109,7 @@ export default function ResumePage() {
             <div>
               <p
                 lang="en"
-                className="m-0 font-mono text-[0.8rem] tracking-[0.1em] text-primary-text"
+                className="m-0 font-mono text-[0.8rem] tracking-normal text-primary-text"
               >
                 FRONTEND DEVELOPER
               </p>

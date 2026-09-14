@@ -7,7 +7,6 @@ import {
 } from "@/contents/resume.constant"
 import { others, selected, side } from "@/contents/project.constant"
 import { skills } from "@/contents/skill.constant"
-import { getAllWritings } from "@/lib/writings"
 
 export const dynamic = "force-static"
 
@@ -95,15 +94,6 @@ function buildLlmsTxt(): string {
   }
   lines.push("")
 
-  const writings = getAllWritings()
-  lines.push("## 글", "")
-  for (const post of writings) {
-    lines.push(
-      `- ${post.title} (${post.date}) — ${post.description} / ${SITE_URL}/writing/${post.slug}/`,
-    )
-  }
-  lines.push("")
-
   lines.push("## 학력 / 자격", "")
   lines.push(`- ${spec.education.name} (${spec.education.year})`)
   lines.push(`- ${spec.certificate.name} (${spec.certificate.year})`, "")
@@ -116,8 +106,6 @@ function buildLlmsTxt(): string {
   lines.push(`- 홈: ${SITE_URL}/`)
   lines.push(`- 이력서: ${SITE_URL}/resume/`)
   lines.push(`- Build: ${SITE_URL}/project/`)
-  lines.push(`- 글: ${SITE_URL}/writing/`)
-  lines.push(`- RSS: ${SITE_URL}/feed.xml`)
   lines.push(`- 연락처: ${SITE_URL}/contact/`)
   lines.push("")
 

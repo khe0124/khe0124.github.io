@@ -84,7 +84,7 @@ export default function ProjectPage() {
       <section className="pt-12">
         <p
           lang="en"
-          className="m-0 font-mono text-xs tracking-[0.12em] text-primary-text uppercase"
+          className="m-0 font-mono text-xs tracking-normal text-primary-text uppercase"
         >
           Selected Works
         </p>
@@ -105,86 +105,101 @@ export default function ProjectPage() {
               id={index === 0 ? "vcm-registry" : index === 1 ? "lca-lcci" : "pople"}
               className="border-primary/50 bg-primary-pale/20 border p-5 md:p-7"
             >
-              <div className="grid gap-5 md:grid-cols-[240px_1fr] md:gap-8">
-                <div>
-                  <h3
-                    lang="en"
-                    className="keep-all m-0 text-[1.25rem] leading-tight font-bold"
-                  >
-                    {project.label}
-                  </h3>
-                  <p className="keep-all mt-3 mb-0 text-sm leading-6 font-semibold text-primary-text">
-                    {project.role}
-                  </p>
-                  <p className="mt-3 mb-0 font-mono text-[11px] leading-5 text-faint">
-                    {project.scope}
-                  </p>
-                </div>
+              <div>
+                <h3
+                  lang="en"
+                  className="keep-all m-0 text-[1.25rem] leading-tight font-bold"
+                >
+                  {project.label}
+                </h3>
+                <p className="keep-all mt-3 mb-0 text-sm leading-6 font-semibold text-primary-text">
+                  {project.role}
+                </p>
+                <p className="mt-3 mb-0 font-mono text-[11px] leading-5 text-faint">
+                  {project.scope}
+                </p>
 
-                <div>
-                  <p className="keep-all m-0 text-[0.95rem] leading-7 text-ink-soft">
-                    {project.summary}
-                  </p>
+                <p className="keep-all mt-5 mb-0 text-[0.95rem] leading-7 text-ink-soft">
+                  {project.summary}
+                </p>
 
-                  <div className="mt-5 space-y-4">
-                    <div>
-                      <h4 className="m-0 mb-2 text-[0.85rem] font-semibold text-primary-text">
-                        Problem
-                      </h4>
-                      <p className="keep-all m-0 text-sm leading-6 text-muted">
-                        {project.problem}
-                      </p>
-                    </div>
-                    <div className="grid gap-5 md:grid-cols-2">
-                      <div>
-                        <h4 className="m-0 mb-2 text-[0.85rem] font-semibold text-primary-text">
-                          Solution
-                        </h4>
-                        <BulletList
-                          items={project.solution}
-                          idPrefix={`${project.label}-solution`}
-                        />
-                      </div>
-                      <div>
-                        <h4 className="m-0 mb-2 text-[0.85rem] font-semibold text-primary-text">
-                          Impact
-                        </h4>
-                        <BulletList
-                          items={project.impact}
-                          idPrefix={`${project.label}-impact`}
-                        />
-                      </div>
-                    </div>
-                    {index < 3 ? (
-                      <div className="mt-5 grid gap-4 border-t border-line pt-4 sm:grid-cols-3">
-                        <div>
-                          <h4 className="m-0 mb-1 text-[0.8rem] font-semibold text-primary-text">Role & team</h4>
-                          <p className="keep-all m-0 text-xs leading-5 text-muted">{index === 0 ? "사용자 웹 최다 기여자·어드민 FE 전담. 백엔드 도메인은 담당 범위를 직접 구현했습니다." : index === 1 ? "입력·검증·시각화 UI를 맡은 FE 개발자로 기획·디자인·QA와 기준을 맞췄습니다." : "프론트엔드 전반과 API 전환, 운영 이슈 안정화를 담당했습니다."}</p>
-                        </div>
-                        <div>
-                          <h4 className="m-0 mb-1 text-[0.8rem] font-semibold text-primary-text">Decision & verification</h4>
-                          <p className="keep-all m-0 text-xs leading-5 text-muted">{index === 0 ? "feature 경계와 서버/클라이언트 상태 분리를 선택하고 MSW·Vitest, 재현 테스트로 검증했습니다." : index === 1 ? "Data Grid·Flow Editor를 사용해 복잡도를 낮추고 QA·기획 QA·디자인 QA로 회귀를 확인했습니다." : "도메인별 API 전환 순서를 정하고 무한 루프·중복 요청·업로드 오류를 재현 후 수정했습니다."}</p>
-                        </div>
-                        <div>
-                          <h4 className="m-0 mb-1 text-[0.8rem] font-semibold text-primary-text">Limit</h4>
-                          <p className="keep-all m-0 text-xs leading-5 text-muted">실서비스 수치와 화면은 공개하지 않습니다. 공개 가능한 구조·역할·검증 근거 중심으로 정리했습니다.</p>
-                        </div>
-                      </div>
-                    ) : null}
-                  </div>
-
-                  <p
-                    lang="en"
-                    className="keep-all mt-5 mb-0 font-mono text-[11px] leading-5 text-primary-text"
-                  >
-                    {project.stacks}
-                  </p>
-                  {project.note ? (
-                    <p className="keep-all mt-4 mb-0 border-l-2 border-primary pl-3 text-xs leading-6 text-faint">
-                      {project.note}
+                <div className="mt-5 space-y-5">
+                  <div>
+                    <h4 className="m-0 mb-2 text-[0.85rem] font-semibold text-primary-text">
+                      Problem
+                    </h4>
+                    <p className="keep-all m-0 text-sm leading-6 text-muted">
+                      {project.problem}
                     </p>
+                  </div>
+                  <div>
+                    <h4 className="m-0 mb-2 text-[0.85rem] font-semibold text-primary-text">
+                      Solution
+                    </h4>
+                    <BulletList
+                      items={project.solution}
+                      idPrefix={`${project.label}-solution`}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="m-0 mb-2 text-[0.85rem] font-semibold text-primary-text">
+                      Impact
+                    </h4>
+                    <BulletList
+                      items={project.impact}
+                      idPrefix={`${project.label}-impact`}
+                    />
+                  </div>
+                  {index < 3 ? (
+                    <div className="mt-5 space-y-4 border-t border-line pt-4">
+                      <div>
+                        <h4 className="m-0 mb-1 text-[0.8rem] font-semibold text-primary-text">
+                          Role & team
+                        </h4>
+                        <p className="keep-all m-0 text-xs leading-5 text-muted">
+                          {index === 0
+                            ? "사용자 웹 최다 기여자·어드민 FE 전담. 백엔드 도메인은 담당 범위를 직접 구현했습니다."
+                            : index === 1
+                              ? "입력·검증·시각화 UI를 맡은 FE 개발자로 기획·디자인·QA와 기준을 맞췄습니다."
+                              : "프론트엔드 전반과 API 전환, 운영 이슈 안정화를 담당했습니다."}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="m-0 mb-1 text-[0.8rem] font-semibold text-primary-text">
+                          Decision & verification
+                        </h4>
+                        <p className="keep-all m-0 text-xs leading-5 text-muted">
+                          {index === 0
+                            ? "feature 경계와 서버/클라이언트 상태 분리를 선택하고 MSW·Vitest, 재현 테스트로 검증했습니다."
+                            : index === 1
+                              ? "Data Grid·Flow Editor를 사용해 복잡도를 낮추고 QA·기획 QA·디자인 QA로 회귀를 확인했습니다."
+                              : "도메인별 API 전환 순서를 정하고 무한 루프·중복 요청·업로드 오류를 재현 후 수정했습니다."}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="m-0 mb-1 text-[0.8rem] font-semibold text-primary-text">
+                          Limit
+                        </h4>
+                        <p className="keep-all m-0 text-xs leading-5 text-muted">
+                          실서비스 수치와 화면은 공개하지 않습니다. 공개 가능한
+                          구조·역할·검증 근거 중심으로 정리했습니다.
+                        </p>
+                      </div>
+                    </div>
                   ) : null}
                 </div>
+
+                <p
+                  lang="en"
+                  className="keep-all mt-5 mb-0 font-mono text-[11px] leading-5 text-primary-text"
+                >
+                  {project.stacks}
+                </p>
+                {project.note ? (
+                  <p className="keep-all mt-4 mb-0 border-l-2 border-primary pl-3 text-xs leading-6 text-faint">
+                    {project.note}
+                  </p>
+                ) : null}
               </div>
             </article>
           ))}
@@ -192,7 +207,7 @@ export default function ProjectPage() {
       </section>
 
       <section className="border-line mt-14 border-y py-8" aria-labelledby="case-flow-title">
-        <p lang="en" className="m-0 font-mono text-xs tracking-[0.12em] text-primary-text uppercase">Reconstructed workflow</p>
+        <p lang="en" className="m-0 font-mono text-xs tracking-normal text-primary-text uppercase">Reconstructed workflow</p>
         <h2 id="case-flow-title" className="keep-all mt-3 mb-0 text-[1.44rem] font-bold">복잡한 도메인을 화면으로 옮기는 공통 순서</h2>
         <p className="keep-all mt-3 max-w-3xl text-sm leading-6 text-muted">실제 서비스 화면이 아닌 공개용 재구성 자료입니다. 도메인 규칙을 파악하고 상태·입력·검증·운영 도구로 연결한 방식을 보여줍니다.</p>
         <ol className="mt-5 grid gap-2 sm:grid-cols-5" aria-label="제품 구현 흐름">
@@ -207,7 +222,7 @@ export default function ProjectPage() {
       <section className="pt-14">
         <p
           lang="en"
-          className="m-0 font-mono text-xs tracking-[0.12em] text-primary-text uppercase"
+          className="m-0 font-mono text-xs tracking-normal text-primary-text uppercase"
         >
           Side Projects
         </p>

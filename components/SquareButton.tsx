@@ -11,7 +11,7 @@ type SquareButtonProps = {
 }
 
 const baseClass =
-  "group border-primary text-ink-soft hover:border-primary-text hover:text-primary-text mb-1.5 grid grid-cols-[40px_1fr_16px] border px-4 py-4 font-title no-underline transition-all duration-500 md:w-[300px]"
+  "group border-b border-transparent text-ink-soft hover:border-primary-text hover:text-primary-text mb-1.5 grid w-full grid-cols-[40px_1fr_16px] px-0 py-4 font-title no-underline transition-all duration-500 focus-visible:border-primary-text md:max-w-[300px]"
 
 function Inner({
   emoji,
@@ -35,7 +35,7 @@ function Inner({
         )}
       </span>
       <span>
-        <span className="underline-swipe">{label}</span>
+        <span className="underline-swipe text-sm">{label}</span>
       </span>
       <span aria-hidden className="flex items-center justify-center p-[0.1rem]">
         <Image
