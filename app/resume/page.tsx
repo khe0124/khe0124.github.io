@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { buildMetadata } from "@/lib/seo"
 import PageShell from "@/components/PageShell"
 import BulletList from "@/components/resume/BulletList"
-import DownloadResumeButton from "@/components/resume/DownloadResumeButton"
 import { SITE, SITE_URL } from "@/contents/site.constant"
 import { breadcrumbJsonLd, pageBase } from "@/lib/jsonld"
 import {
@@ -100,19 +99,15 @@ export default function ResumePage() {
     <PageShell title="Resume" titleTag="p" width="wide">
       <ResumeJsonLd />
 
-      <div className="resume-actions mb-8 flex items-center justify-end pt-6">
-        <DownloadResumeButton />
-      </div>
-
       <article className="resume-print">
-        <header className="border-b border-line pb-8">
+        <header className="border-b border-line py-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p
                 lang="en"
                 className="m-0 font-mono text-xs tracking-normal text-primary-text uppercase"
               >
-                Developer / Product Interface Builder
+                {SITE.tagline}
               </p>
               <h1 className="mt-3 text-[2rem] leading-tight font-bold text-ink">
                 {SITE.name}
@@ -131,7 +126,17 @@ export default function ResumePage() {
                   {SITE.email}
                 </a>
               </p>
-              <p className="m-0">kang-haeun.me</p>
+              <p className="m-0">
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="text-muted no-underline"
+                >
+                  {SITE.linkedinLabel}
+                  <span className="sr-only"> (새 창에서 열림)</span>
+                </a>
+              </p>
             </div>
           </div>
           <p className="keep-all mt-8 max-w-3xl text-[0.95rem] leading-7 text-ink-soft">
