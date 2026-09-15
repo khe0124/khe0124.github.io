@@ -43,6 +43,7 @@ export const highlights: string[] = [
   "대규모 입력·검증·데이터 관리 UI 설계",
   "시각화·그래픽 에디터형 인터랙션 구현",
   "API 전환·공통화·FE 구조 개선 주도",
+  "AI 에이전트 기반 전주기 개발·납품 경험",
   "AI 활용 백엔드 도메인 구현으로 확장",
   "서비스 품질 안정화와 운영 이슈 해결",
 ]
@@ -53,6 +54,39 @@ export const experience: ExperienceItem[] = [
     year: "2022.09 - Present",
     role: "Frontend Developer",
     projects: [
+      {
+        title: "서울형 탄소시장 VCM 레지스트리 전주기 구축 및 납품",
+        skills:
+          "Claude Code, Multi-agent Workflow, OpenAPI 3.1, React, TypeScript, TanStack Query, Spring Boot, Java, PostgreSQL, Flyway, AWS EC2/RDS, nginx",
+        description:
+          "기획·설계·디자인·FE·BE·인프라·배포·납품문서까지 약 11주 동안 AI 에이전트 워크플로우로 전 단계를 진행한 서울형 탄소시장 VCM 레지스트리 프로젝트입니다. 역할별 에이전트와 스킬, 결정 로그, 계약 기반 병렬 개발 구조를 설계해 한 사람이 제품 전주기를 끝까지 완주했습니다.",
+        categories: [
+          {
+            name: "전주기 오케스트레이션",
+            items: [
+              "기획자·디자이너·API 계약 설계자·BE/FE·QA·DevOps 역할을 11개 Claude Code 에이전트와 6개 스킬로 분리하고, 결정 로그 DEC-001~096으로 근거와 영향을 추적",
+              "발주처 xlsx와 회의록을 기준으로 요구사항, 화면ID, 도메인·테이블·코드 정의, 통합테스트 시나리오 등 공공SI 산출물을 정리",
+              "원본 문서는 불변으로 두고 코드와 문서를 상호 검증해 기획 단계 갭 14건, 인수인계 문서 작성 중 결함 4건, 브라우저 QA 중 결함 3건을 찾아 후속 처리",
+            ],
+          },
+          {
+            name: "계약 기반 개발",
+            items: [
+              "OpenAPI 3.1 계약을 기준으로 BE·FE user·FE admin을 병렬 개발하고, openapi-typescript와 openapi-fetch로 프론트엔드 타입·훅을 생성해 계약 drift를 타입 에러로 드러나게 구성",
+              "Spring Boot 4 / Java 21 멀티모듈 백엔드와 React 기반 user/admin 프론트엔드를 연결하고, 회원 셀프서비스 폐기·조회 전용 user 사이트 전환 같은 큰 방향 변경도 결정 로그로 추적",
+              "첨부파일 IDOR, 소유권 검증, 로그인 rate limit, 타이밍 사이드채널, CSP 등 보안 이슈와 KWCAG 2.2 접근성 이슈를 납품 전 QA 라운드에서 정리",
+            ],
+          },
+          {
+            name: "배포·납품",
+            items: [
+              "EC2, RDS PostgreSQL, nginx, systemd, Let's Encrypt 기반 운영 구성을 수동 프로비저닝하고, 환경변수·롤백·검증 절차를 배포 안내서로 고정",
+              "정적 프론트엔드 캐시 정책과 nginx 설정 이원화 문제를 발견해 배포 산출물과 서버 설정의 단일 기준을 정리",
+              "빌드·배포 안내서, 인수인계 문서, pdf·hwpx 산출물 생성 스크립트까지 포함해 운영 인계 가능한 형태로 프로젝트를 마무리",
+            ],
+          },
+        ],
+      },
       {
         title:
           "스마트시티 VCM Registry 플랫폼 프론트엔드 (사용자 웹 · 운영자 어드민)",
