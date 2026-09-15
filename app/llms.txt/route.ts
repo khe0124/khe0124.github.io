@@ -5,7 +5,7 @@ import {
   highlights,
   spec,
 } from "@/contents/resume.constant"
-import { others, selected, side } from "@/contents/project.constant"
+import { others, side } from "@/contents/project.constant"
 import { skills } from "@/contents/skill.constant"
 
 export const dynamic = "force-static"
@@ -50,39 +50,33 @@ function buildLlmsTxt(): string {
       lines.push(`#### ${project.title}`, "")
       lines.push(`- 기술: ${project.skills}`)
       if (project.description) lines.push(`- 개요: ${project.description}`)
+      if (project.problem) lines.push(`- 문제: ${project.problem}`)
 
       for (const category of project.categories ?? []) {
         lines.push(`- ${category.name}`)
         for (const item of category.items) lines.push(`  - ${item}`)
       }
       for (const work of project.works ?? []) lines.push(`  - ${work}`)
+
+      if (project.impact?.length) {
+        lines.push("- 결과")
+        for (const item of project.impact) lines.push(`  - ${item}`)
+      }
+      if (project.note) lines.push(`- 공개 범위: ${project.note}`)
       lines.push("")
     }
-  }
-
-  lines.push("## 대표 프로젝트", "")
-  for (const project of selected) {
-    lines.push(`### ${project.label}`, "")
-    lines.push(`- 역할: ${project.role}`)
-    lines.push(`- 범위: ${project.scope}`)
-    lines.push(`- 기술: ${project.stacks}`)
-    lines.push(`- 개요: ${project.summary}`)
-    lines.push(`- 문제: ${project.problem}`)
-    lines.push("- 해결")
-    for (const item of project.solution) lines.push(`  - ${item}`)
-    lines.push("- 결과")
-    for (const item of project.impact) lines.push(`  - ${item}`)
-    if (project.note) lines.push(`- 공개 범위: ${project.note}`)
-    lines.push("")
   }
 
   lines.push("## 사이드 프로젝트", "")
   for (const project of side) {
     lines.push(`### ${project.label}`, "")
+    lines.push(`- 부제: ${project.subtitle}`)
     lines.push(`- 역할: ${project.role}`)
     lines.push(`- 기술: ${project.stacks}`)
     lines.push(`- 개요: ${project.desc}`)
+    if (project.problem) lines.push(`- 문제: ${project.problem}`)
     for (const task of project.tasks) lines.push(`  - ${task}`)
+    if (project.learning) lines.push(`- 배운 점: ${project.learning}`)
     lines.push("")
   }
 

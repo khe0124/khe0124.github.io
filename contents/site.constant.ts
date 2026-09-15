@@ -1,6 +1,9 @@
 /** 사이트 전역 메타 정보. SEO 메타태그·JSON-LD·sitemap·robots가 모두 이 값을 참조합니다. */
 export const SITE_URL = "https://kang-haeun.me"
 
+/** 이력서 헤더 링크와 JSON-LD sameAs 가 같은 값을 쓰도록 한 곳에서 관리합니다. */
+const LINKEDIN_URL = "https://www.linkedin.com/in/khe0124"
+
 export const SITE = {
   url: SITE_URL,
   /** <title> 및 og:site_name 에 쓰이는 브랜드 이름 */
@@ -9,7 +12,7 @@ export const SITE = {
   nameEn: "Kang Haeun",
   jobTitle: "Frontend Engineer",
   /** 화면에 노출되는 정체성 라벨 (푸터 등) */
-  tagline: "AI-assisted Product Builder",
+  tagline: "Product Builder",
   /**
    * 구조화 데이터용 직함 목록.
    * "프론트엔드 개발자"는 실제 검색되는 키워드라 남기고, 새 포지셔닝을 함께 노출합니다.
@@ -29,10 +32,13 @@ export const SITE = {
     "산업디자인에서 출발해 UI/UX를 거쳐 7년간 프론트엔드 개발자로 일해온 강하은입니다. React, Next.js, TypeScript로 복잡한 B2B 제품의 화면과 흐름을 만들고, 최근에는 AI를 활용해 백엔드 구현까지 작업 범위를 넓히고 있습니다.",
   ogImage: "/images/thumb.png",
   favicon: "/favicon.png",
+  linkedin: LINKEDIN_URL,
+  /** 링크에 노출할 짧은 표기 */
+  linkedinLabel: "linkedin.com/in/khe0124",
   sameAs: [
     "https://github.com/khe0124",
-    "https://www.linkedin.com/in/khe0124",
-    "https://oold-works.vercel.app/",
+    LINKEDIN_URL,
+    "https://oold-works.kang-haeun.me/",
     "https://seaweedisland.tistory.com/",
   ],
   keywords: [

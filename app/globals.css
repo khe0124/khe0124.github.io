@@ -196,9 +196,8 @@
   }
 }
 
-/* 이력서 인쇄 / PDF 저장 */
+/* 이력서 인쇄 / PDF 저장 (브라우저 인쇄 기능으로 바로 저장할 수 있게 유지) */
 @media print {
-  .resume-actions,
   .print-hidden {
     display: none !important;
   }

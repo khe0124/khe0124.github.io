@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { buildMetadata } from "@/lib/seo"
 import PageShell from "@/components/PageShell"
 import BulletList from "@/components/resume/BulletList"
-import DownloadResumeButton from "@/components/resume/DownloadResumeButton"
 import { SITE, SITE_URL } from "@/contents/site.constant"
 import { breadcrumbJsonLd, pageBase } from "@/lib/jsonld"
 import {
   description,
   experience,
+  glance,
   highlights,
   spec,
 } from "@/contents/resume.constant"
@@ -96,22 +96,18 @@ function ResumeJsonLd() {
 
 export default function ResumePage() {
   return (
-    <PageShell title="RESUME" titleTag="p" width="wide">
+    <PageShell title="Resume" titleTag="p" width="wide">
       <ResumeJsonLd />
 
-      <div className="resume-actions mb-8 flex items-center justify-end pt-6">
-        <DownloadResumeButton />
-      </div>
-
       <article className="resume-print">
-        <header className="border-b border-line pb-8">
+        <header className="border-b border-line py-8">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p
                 lang="en"
-                className="m-0 font-mono text-[0.8rem] tracking-normal text-primary-text"
+                className="m-0 font-mono text-xs tracking-normal text-primary-text uppercase"
               >
-                FRONTEND DEVELOPER
+                {SITE.tagline}
               </p>
               <h1 className="mt-3 text-[2rem] leading-tight font-bold text-ink">
                 {SITE.name}
@@ -130,45 +126,23 @@ export default function ResumePage() {
                   {SITE.email}
                 </a>
               </p>
-              <p className="m-0">kang-haeun.me</p>
+              <p className="m-0">
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  className="text-muted no-underline"
+                >
+                  {SITE.linkedinLabel}
+                  <span className="sr-only"> (새 창에서 열림)</span>
+                </a>
+              </p>
             </div>
           </div>
           <p className="keep-all mt-8 max-w-3xl text-[0.95rem] leading-7 text-ink-soft">
             {description}
           </p>
         </header>
-
-        <section className="grid gap-4 border-b border-line py-8 md:grid-cols-3" aria-labelledby="resume-fit-title">
-          <h2 id="resume-fit-title" className="m-0 text-[1.2rem] font-medium">At a glance</h2>
-          <div className="md:col-span-2 grid gap-3 sm:grid-cols-3">
-            {[
-              ["7년 차", "프론트엔드 경력"],
-              ["React · TS", "주요 제품 스택"],
-              ["B2B · Admin", "업무형 제품 경험"],
-            ].map(([value, label]) => (
-              <div key={label} className="border-line border p-3">
-                <p className="m-0 font-mono text-sm font-bold text-primary-text">{value}</p>
-                <p className="m-0 mt-1 text-xs text-muted">{label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-5 border-b border-line py-8">
-          <h2 lang="en" className="m-0 text-[1.2rem] font-medium">
-            Highlights
-          </h2>
-          <ul role="list" className="flex list-none flex-wrap gap-2">
-            {highlights.map(item => (
-              <li
-                key={item}
-                className="keep-all border-primary border px-3 py-1.5 text-xs text-primary-text"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
 
         <section className="flex flex-col gap-6 border-b border-line py-8">
           <h2 lang="en" className="m-0 text-[1.2rem] font-medium">
@@ -178,14 +152,14 @@ export default function ResumePage() {
             {experience.map((company, companyIdx) => (
               <div
                 key={`${company.company}-${companyIdx}`}
-                className="grid gap-5 border-b border-line-soft pb-8 last:border-b-0 last:pb-0 md:grid-cols-[220px_1fr] md:gap-10"
+                className="grid gap-5 border-b border-line-soft pb-8 last:border-b-0 last:pb-0 md:grid-cols-[160px_1fr] md:gap-10"
               >
                 <div>
                   <h3 className="m-0 text-[1rem] font-medium text-ink">
                     {company.company}
                   </h3>
                   {company.role ? (
-                    <p className="m-0 mt-1 text-[0.85rem] text-faint">
+                    <p lang="en" className="m-0 mt-1 text-[0.85rem] text-faint">
                       {company.role}
                     </p>
                   ) : null}
@@ -216,6 +190,14 @@ export default function ResumePage() {
                             {project.description}
                           </p>
                         ) : null}
+                        {project.problem ? (
+                          <p className="keep-all m-0 mt-3 text-[0.9rem] leading-6 text-muted">
+                            <span className="font-semibold text-primary-text">
+                              문제{" "}
+                            </span>
+                            {project.problem}
+                          </p>
+                        ) : null}
                         {project.categories?.length ? (
                           <div className="mt-4 space-y-4">
                             {project.categories.map((category, categoryIdx) => (
@@ -239,6 +221,22 @@ export default function ResumePage() {
                               idPrefix={`${project.title}-work`}
                             />
                           </div>
+                        ) : null}
+                        {project.impact?.length ? (
+                          <div className="mt-4">
+                            <h5 className="m-0 mb-1.5 text-[0.85rem] leading-6 font-semibold text-primary-text">
+                              결과
+                            </h5>
+                            <BulletList
+                              items={project.impact}
+                              idPrefix={`${project.title}-impact`}
+                            />
+                          </div>
+                        ) : null}
+                        {project.note ? (
+                          <p className="keep-all mt-4 mb-0 border-l-2 border-primary pl-3 text-xs leading-6 text-faint">
+                            {project.note}
+                          </p>
                         ) : null}
                       </section>
                     )
