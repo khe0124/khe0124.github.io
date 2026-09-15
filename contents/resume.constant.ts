@@ -14,6 +14,12 @@ export type ProjectItem = {
   description?: string
   works?: string[]
   categories?: CategoryItem[]
+  /** 이 프로젝트가 풀어야 했던 문제. 대표 프로젝트에만 채웁니다. */
+  problem?: string
+  /** 담당 범위가 만든 결과. 채용 검토자가 기여도를 가늠하는 근거입니다. */
+  impact?: string[]
+  /** 공개 가능한 범위에 대한 단서 (B2B·공공 프로젝트) */
+  note?: string
 }
 
 export type ExperienceItem = {
@@ -60,6 +66,14 @@ export const experience: ExperienceItem[] = [
           "React 18/19, Vite, TypeScript, Tailwind, Radix(shadcn/ui), TanStack Query/Table, zustand, zod, react-hook-form, Tiptap, ECharts/Chart.js, MSW, Vitest, PWA",
         description:
           "VCM(자발적 탄소시장)과 CCM 도메인을 신청자용 사용자 웹과 운영자 어드민 두 저장소로 나눠 구축한 공공 B2B 플랫폼입니다. 사용자 웹에서는 최다 기여자이자 리드 프론트엔드로 참여했고, 어드민은 프론트엔드 전 범위를 단독에 가깝게 맡았습니다.",
+        problem:
+          "신청자와 운영자가 긴 상태 전이, 대규모 입력, 심사·승인·정산 절차를 오류 없이 따라갈 수 있어야 했고, API와 도메인 규칙 변경도 빠르게 흡수해야 했습니다.",
+        impact: [
+          "복잡한 탄소시장 절차를 신청자와 운영자가 따라갈 수 있는 제품 흐름으로 연결",
+          "대량 목록, 대규모 폼, 도메인 검증, 테스트 환경을 함께 정리해 운영 안정성 강화",
+          "프론트엔드 중심 역할에서 제품 전체 도메인을 구현하는 범위로 확장",
+        ],
+        note: "공공·B2B 프로젝트 특성상 실제 화면과 서비스 링크는 공개하지 않고, 담당 범위와 구현 구조 중심으로 정리했습니다.",
         categories: [
           {
             name: "사용자 웹",
@@ -124,6 +138,13 @@ export const experience: ExperienceItem[] = [
           "React, Redux, Redux-Toolkit, React-Flow, MUI, Data Grid Pro, TailwindCSS, Storybook, Webpack/Vite",
         description:
           "전과정평가(LCA) 플랫폼에서 생성, 입력, 검증, 공정 흐름도, 결과 요약, 리포트 다운로드까지 이어지는 핵심 사용자 흐름을 프론트엔드 관점에서 설계·구현했습니다.",
+        problem:
+          "Mass Balance, LCI DB, Cut-off, 공정 트리처럼 개념 자체가 어려운 업무 규칙을 사용자가 실제로 입력하고 검증할 수 있는 화면으로 바꿔야 했습니다.",
+        impact: [
+          "복잡한 환경 평가 도메인을 입력 가능한 제품 경험으로 전환",
+          "반복되는 그리드·검증·리포트 패턴을 정리해 사용성과 유지보수성 향상",
+          "운영 중 발견된 렌더링, 저장 실패, 트리 동기화 이슈를 해결해 제품 신뢰도 개선",
+        ],
         categories: [
           {
             name: "대표 기여",
@@ -157,6 +178,13 @@ export const experience: ExperienceItem[] = [
           "React, Next.js, Nest.js, MUI, Chakra UI, Context API, Google Maps, i18next",
         description:
           "탄소 크레딧 발행, 거래, 레지스트리 기능이 연결된 플랫폼에서 프론트엔드 전반 개발과 API 전환, 운영 안정화를 맡았습니다.",
+        problem:
+          "거래와 문서, 지도, 결제, 다국어가 연결된 서비스에서 API 구조 변경과 운영 이슈를 흡수하면서 사용자 플로우를 안정화해야 했습니다.",
+        impact: [
+          "Admin/Front 양쪽의 데이터 흐름과 화면 구조를 정비",
+          "무한 루프, 중복 요청, 파일 업로드, 문서 다운로드 등 실제 사용 구간의 이슈 안정화",
+          "탄소 크레딧 서비스의 사용자 접점과 운영 화면 완성도 개선",
+        ],
         categories: [
           {
             name: "대표 기여",

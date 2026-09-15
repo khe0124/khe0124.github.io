@@ -48,7 +48,7 @@ export default function HomePage() {
   return (
     <PageShell>
       <HomeJsonLd />
-      <section className="px-2 pb-6">
+      <section className="p-2">
         <div className="flex items-baseline">
           <h1 className="m-0 pr-4 text-[2.986rem] font-black">
             <span lang="en" className="text-gradient">
@@ -70,7 +70,7 @@ export default function HomePage() {
         <div className="keep-all py-6 text-muted">
           <p
             lang="en"
-            className={`${baskervville.className} m-0 text-[1.44rem] leading-9 font-normal text-ink-soft`}
+            className={`${baskervville.className} text-[1.44rem] leading-7 pb-1 font-normal text-ink-soft`}
           >
             I build product interfaces
             <br />
@@ -84,7 +84,6 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-
       <Reveal as="section" className="px-2 pb-6" delay={80}>
         <nav aria-label="바로가기">
           <h2 className="sr-only">바로가기</h2>
