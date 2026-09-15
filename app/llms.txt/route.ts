@@ -70,6 +70,7 @@ function buildLlmsTxt(): string {
   lines.push("## 사이드 프로젝트", "")
   for (const project of side) {
     lines.push(`### ${project.label}`, "")
+    lines.push(`- 부제: ${project.subtitle}`)
     lines.push(`- 역할: ${project.role}`)
     lines.push(`- 기술: ${project.stacks}`)
     lines.push(`- 개요: ${project.desc}`)

@@ -32,7 +32,7 @@ export const SITE = {
   sameAs: [
     "https://github.com/khe0124",
     "https://www.linkedin.com/in/khe0124",
-    "https://oold-works.vercel.app/",
+    "https://oold-works.kang-haeun.me/",
     "https://seaweedisland.tistory.com/",
   ],
   keywords: [

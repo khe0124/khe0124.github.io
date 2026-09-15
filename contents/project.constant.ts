@@ -5,6 +5,8 @@
 
 export type SideProject = {
   label: string
+  /** 프로젝트명을 보충하는 한 줄 부제 */
+  subtitle: string
   desc: string
   role: string
   stacks: string
@@ -24,8 +26,9 @@ export type OtherWork = {
 export const side: SideProject[] = [
   {
     label: "체육영역 시즌1",
+    subtitle: "운동이 싫었던 게 아니라 몰랐던거야",
     desc: "같이 운동할 사람을 모아주는 서비스를 구상하기 전, 설문으로 사용자의 성향을 파악하고 잘 맞는 운동을 추천하는 웹페이지입니다.",
-    role: "프론트엔드 개발자",
+    role: "Frontend Developer",
     stacks: "React, React Hooks, Styled-components, Koa, Netlify",
     images: [
       "/images/cyyy1_01.png",
@@ -45,8 +48,9 @@ export const side: SideProject[] = [
   },
   {
     label: "체육영역 시즌2",
+    subtitle: "초보 풋살 클래스 대시보드",
     desc: "초보 풋살 클래스 참가자의 성장 추이를 보여주는 개인화 페이지와 커리큘럼 종료일에 열린 대회의 소개 페이지입니다.",
-    role: "프론트엔드 개발자",
+    role: "Frontend Developer",
     stacks: "Vue3, Vuex, SCSS, Chart.js",
     images: [
       "/images/cyyy2_01.png",

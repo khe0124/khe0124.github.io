@@ -20,7 +20,7 @@ export const route: Route[] = [
   {
     label: "oold works ↗",
     external: true,
-    link: "https://oold-works.vercel.app/",
+    link: "https://oold-works.kang-haeun.me/",
     emoji: "🫧",
   },
 ]

@@ -154,7 +154,7 @@ export default function ResumePage() {
                     {company.company}
                   </h3>
                   {company.role ? (
-                    <p className="m-0 mt-1 text-[0.85rem] text-faint">
+                    <p lang="en" className="m-0 mt-1 text-[0.85rem] text-faint">
                       {company.role}
                     </p>
                   ) : null}

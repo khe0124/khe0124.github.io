@@ -96,14 +96,25 @@ export default function ProjectPage() {
               className="grid gap-5 border-t border-line py-7 md:grid-cols-[200px_1fr] md:gap-6"
             >
               <div>
-                <h4 className="keep-all m-0 pb-2 text-[1.05rem] font-bold">
+                <h4 className="keep-all m-0 text-[1.05rem] font-bold">
                   {project.label}
                 </h4>
+                {/* 역할 표기도 이력서의 회사 열과 동일한 위치·스타일을 씁니다. */}
+                <p lang="en" className="m-0 mt-1 text-[0.85rem] text-faint">
+                  {project.role}
+                </p>
               </div>
 
               <div>
-                <p className="m-0 font-bold text-primary-text">
-                  {project.role}
+                {/* 프로젝트명 → 기술 스택 순서와 스타일을 이력서 페이지와 맞춥니다. */}
+                <h5 className="keep-all m-0 text-[0.95rem] leading-snug font-medium text-ink">
+                  {project.subtitle}
+                </h5>
+                <p
+                  lang="en"
+                  className="keep-all m-0 mt-1 font-mono text-[11px] leading-5 text-primary-text"
+                >
+                  {project.stacks}
                 </p>
                 <p className="keep-all m-0 mt-2 text-sm leading-7 text-ink-soft">
                   {project.desc}
@@ -111,12 +122,6 @@ export default function ProjectPage() {
                 <p className="keep-all m-0 mt-3 text-sm leading-6 text-muted">
                   <span className="font-semibold text-primary-text">문제 </span>
                   {project.problem}
-                </p>
-                <p className="keep-all m-0 mt-3 text-sm text-faint">
-                  <span lang="en" className="mr-2 font-bold text-primary-text">
-                    Stacks
-                  </span>
-                  <span lang="en">{project.stacks}</span>
                 </p>
 
                 <div className="grid grid-cols-2 gap-2.5 pt-6 sm:grid-cols-4">
@@ -137,7 +142,7 @@ export default function ProjectPage() {
                 </div>
 
                 <div className="pt-5">
-                  <h5 className="sr-only">주요 구현</h5>
+                  <h6 className="sr-only">주요 구현</h6>
                   <BulletList
                     items={project.tasks}
                     idPrefix={`${project.label}-task`}
