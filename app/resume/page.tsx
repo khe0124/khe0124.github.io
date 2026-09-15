@@ -8,6 +8,7 @@ import { breadcrumbJsonLd, pageBase } from "@/lib/jsonld"
 import {
   description,
   experience,
+  glance,
   highlights,
   spec,
 } from "@/contents/resume.constant"
@@ -96,7 +97,7 @@ function ResumeJsonLd() {
 
 export default function ResumePage() {
   return (
-    <PageShell title="RESUME" titleTag="p" width="wide">
+    <PageShell title="Resume" titleTag="p" width="wide">
       <ResumeJsonLd />
 
       <div className="resume-actions mb-8 flex items-center justify-end pt-6">
@@ -109,9 +110,9 @@ export default function ResumePage() {
             <div>
               <p
                 lang="en"
-                className="m-0 font-mono text-[0.8rem] tracking-normal text-primary-text"
+                className="m-0 font-mono text-xs tracking-normal text-primary-text uppercase"
               >
-                FRONTEND DEVELOPER
+                Developer / Product Interface Builder
               </p>
               <h1 className="mt-3 text-[2rem] leading-tight font-bold text-ink">
                 {SITE.name}
@@ -137,45 +138,6 @@ export default function ResumePage() {
             {description}
           </p>
         </header>
-
-        <section
-          className="grid gap-4 border-b border-line py-8 md:grid-cols-3"
-          aria-labelledby="resume-fit-title"
-        >
-          <h2 id="resume-fit-title" className="m-0 text-[1.2rem] font-medium">
-            At a glance
-          </h2>
-          <div className="md:col-span-2 grid gap-3 sm:grid-cols-3">
-            {[
-              ["7년 차", "프론트엔드 경력"],
-              ["React · TS", "주요 제품 스택"],
-              ["B2B · Admin", "업무형 제품 경험"],
-            ].map(([value, label]) => (
-              <div key={label} className="border-line border p-3">
-                <p className="m-0 font-mono text-sm font-bold text-primary-text">
-                  {value}
-                </p>
-                <p className="m-0 mt-1 text-xs text-muted">{label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="flex flex-col gap-5 border-b border-line py-8">
-          <h2 lang="en" className="m-0 text-[1.2rem] font-medium">
-            Highlights
-          </h2>
-          <ul role="list" className="flex list-none flex-wrap gap-2">
-            {highlights.map(item => (
-              <li
-                key={item}
-                className="keep-all border-primary border px-3 py-1.5 text-xs text-primary-text"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
 
         <section className="flex flex-col gap-6 border-b border-line py-8">
           <h2 lang="en" className="m-0 text-[1.2rem] font-medium">

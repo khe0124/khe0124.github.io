@@ -46,7 +46,7 @@ function ContactJsonLd() {
 
 export default function ContactPage() {
   return (
-    <PageShell title="CONTACT">
+    <PageShell title="Contact">
       <ContactJsonLd />
 
       <div className="m-auto flex flex-col justify-center p-6 text-center">

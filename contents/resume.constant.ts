@@ -29,6 +29,12 @@ export type ExperienceItem = {
   projects: ProjectItem[]
 }
 
+/** 이력서 상단 "At a glance" 요약 지표 */
+export type GlanceItem = {
+  value: string
+  label: string
+}
+
 export type SpecEntry = {
   name: string
   year: string
@@ -43,6 +49,12 @@ export const title = "Career"
 
 export const description =
   "7년 차 프론트엔드 개발자로, 복잡한 산업 도메인을 사용 가능한 제품 UI로 바꾸는 일을 해왔습니다. LCA/LCCI, 탄소 크레딧, Web3, IoT, STO처럼 개념 자체가 어려운 영역에서 입력·검증·시각화·리포트·운영 화면까지 연결되는 화면 구조를 설계하고 구현해왔고, 최근에는 AI를 활용해 백엔드 도메인 개발과 테스트까지 작업 범위를 넓히고 있습니다."
+
+export const glance: GlanceItem[] = [
+  { value: "7년 차", label: "프론트엔드 경력" },
+  { value: "React · TS", label: "주요 제품 스택" },
+  { value: "B2B · Admin", label: "업무형 제품 경험" },
+]
 
 export const highlights: string[] = [
   "복잡한 도메인을 실제 사용자 플로우로 번역",
@@ -73,7 +85,6 @@ export const experience: ExperienceItem[] = [
           "대량 목록, 대규모 폼, 도메인 검증, 테스트 환경을 함께 정리해 운영 안정성 강화",
           "프론트엔드 중심 역할에서 제품 전체 도메인을 구현하는 범위로 확장",
         ],
-        note: "공공·B2B 프로젝트 특성상 실제 화면과 서비스 링크는 공개하지 않고, 담당 범위와 구현 구조 중심으로 정리했습니다.",
         categories: [
           {
             name: "사용자 웹",

@@ -68,7 +68,7 @@ function ProjectJsonLd() {
 
 export default function ProjectPage() {
   return (
-    <PageShell title="BUILD" width="wide">
+    <PageShell title="Build" width="wide">
       <ProjectJsonLd />
 
       <section className="pt-12">
@@ -79,12 +79,10 @@ export default function ProjectPage() {
           Side Projects
         </p>
         <h2 className="keep-all mt-3 mb-0 max-w-3xl text-[1.728rem] leading-tight font-bold">
-          일 밖에서 직접 만들어 본 것들
+          사이드 프로젝트들
         </h2>
         <p className="keep-all mt-4 max-w-3xl text-sm leading-7 text-muted">
-          업무와 별개로 아이디어를 화면으로 옮기고 배포까지 해본 작업을
-          기록합니다. 실무 경력과 담당 범위는 <Link href="/resume">이력서</Link>
-          에 정리해 두었습니다.
+          아이디어를 화면으로 구현하고 배포까지 해본 작업들입니다.
         </p>
       </section>
 

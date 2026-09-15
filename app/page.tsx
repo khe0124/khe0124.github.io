@@ -77,7 +77,7 @@ export default function HomePage() {
             for complex domains.
           </p>
           <p className="keep-all m-0 mt-3 break-normal text-[0.9rem] leading-[inherit]">
-            산업디자인에서 출발해 UI/UX를 거쳐 프론트엔드 개발자로 일해왔습니다.
+            산업디자인에서 출발해 UI/UX를 거쳐 프론트엔드 개발자로 일해왔습니다.<br />
             React, Next.js, TypeScript로 LCA/LCCI, VCM Registry, 탄소 크레딧,
             Web3, IoT, STO처럼 복잡한 B2B 제품의 화면과 흐름을 만들었고,
             최근에는 AI를 활용해 백엔드 구현까지 작업 범위를 넓히고 있습니다.
@@ -90,7 +90,7 @@ export default function HomePage() {
           <div className="space-y-1.5 py-6">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
-                <p className="mb-4 text-sm">Works</p>
+                <p className={`mb-4 text-base ${baskervville.className}`}>Works</p>
                 <div className="flex flex-col gap-1.5">
                   {primaryRoutes.map(item => (
                     <SquareButton
@@ -104,7 +104,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div>
-                <p className="mb-4 text-sm">Links</p>
+                <p className={`mb-4 text-base ${baskervville.className}`}>Links</p>
                 <div className="flex flex-col gap-1.5">
                   {externalRoutes.map(item => (
                     <SquareButton
