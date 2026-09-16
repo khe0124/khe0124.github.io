@@ -4,30 +4,30 @@ import { SITE_URL } from "@/contents/site.constant"
 export const dynamic = "force-static"
 
 /**
- * 생성형 검색(AEO/GEO)에 콘텐츠가 인용되도록 주요 AI 크롤러를 명시적으로 허용합니다.
- * `*` 규칙만으로도 허용이지만, 명시해 두면 의도가 분명해집니다.
+ * 일반 검색엔진 크롤링은 허용하되, 모델 학습·AI 데이터 수집 목적의 크롤러는 차단합니다.
+ * robots.txt는 협조적 크롤러를 위한 신호이므로, 악의적/비준수 봇을 기술적으로 막는 장치는 아닙니다.
  */
-const AI_CRAWLERS = [
+const AI_TRAINING_CRAWLERS = [
   "GPTBot",
-  "OAI-SearchBot",
-  "ChatGPT-User",
   "ClaudeBot",
-  "Claude-User",
   "anthropic-ai",
-  "PerplexityBot",
-  "Perplexity-User",
   "Google-Extended",
   "Applebot-Extended",
   "CCBot",
   "Bytespider",
   "meta-externalagent",
+  "Meta-ExternalAgent",
+  "FacebookBot",
+  "cohere-ai",
+  "AI2Bot",
+  "Diffbot",
 ]
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       { userAgent: "*", allow: "/" },
-      { userAgent: AI_CRAWLERS, allow: "/" },
+      { userAgent: AI_TRAINING_CRAWLERS, disallow: "/" },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,
